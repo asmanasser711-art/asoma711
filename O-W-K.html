@@ -1,0 +1,5297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONLY WE KNOW ♡</title>
+
+<style>
+:root {
+  --bg: #071525;
+  --surface: #10243B;
+  --text: #E8F0F8;
+  --muted: #A5B9CE;
+  --accent: #739FC8;
+  --accent-light: #1B3552;
+  --border: #2B4663;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.9;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+header {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+  background:
+    radial-gradient(ellipse at top, #1C3D60, transparent 70%),
+    var(--bg);
+}
+
+.heart {
+  color: var(--accent);
+  font-size: 40px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  letter-spacing: 3px;
+  margin: 5px 0;
+}
+
+header p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.primary-btn,
+.next-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #071525;
+  border: 1px solid #8BB4DB;
+  padding: 11px 26px;
+  border-radius: 30px;
+  margin-top: 15px;
+  transition: .25s;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.primary-btn:hover,
+.next-btn:hover {
+  transform: translateY(-2px);
+  background: #91B8DD;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px;
+  background: rgba(7, 21, 37, .96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: .85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  transition: .25s;
+}
+
+nav a:hover {
+  background: var(--accent-light);
+  color: #BBD9F4;
+}
+
+section {
+  padding: 75px 20px;
+  scroll-margin-top: 90px;
+}
+
+.section-inner {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.number {
+  color: #8DB6DC;
+  letter-spacing: 2px;
+  font-size: .9rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2.3rem);
+  line-height: 1.6;
+  margin: 8px 0 18px;
+}
+
+.description {
+  color: var(--muted);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 25px;
+  margin-top: 22px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .14);
+}
+
+.soft {
+  background: var(--accent-light);
+}
+
+.divider {
+  width: 55px;
+  height: 2px;
+  background: var(--accent);
+  margin: 20px auto;
+  box-shadow: 0 0 12px rgba(115, 159, 200, .35);
+}
+
+.secret-area {
+  background: #0B1D32;
+}
+
+.envelope {
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 30px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, .15);
+}
+
+.envelope-icon {
+  font-size: 75px;
+  margin-bottom: 5px;
+}
+
+.message {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  padding: 15px 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.count-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.count-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #142B45;
+  color: #B9D5EF;
+  font-size: 1.2rem;
+  transition: .25s;
+}
+
+.count-btn:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.count-btn.active {
+  background: var(--accent);
+  color: #071525;
+  border-color: #A8C9E8;
+  box-shadow: 0 0 18px rgba(115, 159, 200, .25);
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.media-grid img,
+.media-grid video {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  background: var(--accent-light);
+  border: 1px solid var(--border);
+}
+
+footer {
+  text-align: center;
+  padding: 55px 20px;
+  background: #10243B;
+  border-top: 1px solid var(--border);
+}
+
+footer h2 {
+  font-family: Georgia, serif;
+}
+
+/* =========================
+   SECTION 1: OUR LOGO
+========================= */
+
+#s1 .logo-section {
+  max-width: 1100px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+#s1 .logo-main-title {
+  color: var(--text);
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 2px;
+  margin: 0 0 35px;
+}
+
+#s1 .logo-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, .85fr) minmax(300px, 1.15fr);
+  gap: 32px;
+  align-items: center;
+  direction: ltr;
+  text-align: right;
+}
+
+#s1 .logo-envelope-area {
+  direction: rtl;
+  min-width: 0;
+}
+
+#s1 .logo-envelope {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  min-height: 300px;
+  margin: auto;
+  padding: 25px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  color: var(--text);
+  background: linear-gradient(145deg, #173653, #0C1D31);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+  transition: transform .3s, box-shadow .3s;
+}
+
+#s1 .logo-envelope:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .35);
+}
+
+#s1 .logo-envelope .envelope-icon {
+  font-size: 76px;
+  line-height: 1.3;
+  transition: transform .5s;
+}
+
+#s1 .envelope-hint {
+  color: var(--muted);
+  font-size: .95rem;
+  margin: 0;
+}
+
+#s1 .logo-photo {
+  display: none;
+  width: 100%;
+  max-width: 320px;
+  max-height: 340px;
+  object-fit: contain;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  animation: logoPhotoPop .65s cubic-bezier(.2, 1.5, .5, 1);
+}
+
+#s1 .logo-envelope.opened .envelope-icon,
+#s1 .logo-envelope.opened .envelope-hint {
+  display: none;
+}
+
+#s1 .logo-envelope.opened .logo-photo {
+  display: block;
+}
+
+#s1 .logo-envelope.opened {
+  background: var(--surface);
+}
+
+#s1 .logo-envelope.opened .opened-note {
+  display: block;
+}
+
+#s1 .opened-note {
+  display: none;
+  margin: 0;
+  color: #BBD9F4;
+  font-weight: 600;
+}
+
+@keyframes logoPhotoPop {
+  0% {
+    opacity: 0;
+    transform: scale(.65) rotate(-5deg);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.06) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+#s1 .logo-story {
+  direction: rtl;
+  text-align: right;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .14);
+}
+
+#s1 .logo-intro {
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+
+#s1 .logo-meaning {
+  padding: 15px 16px;
+  margin: 13px 0;
+  background: rgba(27, 53, 82, .55);
+  border: 1px solid var(--border);
+  border-right: 3px solid var(--accent);
+  border-radius: 12px;
+}
+
+#s1 .logo-meaning h3 {
+  color: #A8C9E8;
+  font-size: 1.1rem;
+  margin: 0 0 5px;
+}
+
+#s1 .logo-meaning p {
+  color: var(--text);
+  margin: 0;
+  font-size: .96rem;
+}
+
+#s1 .logo-ending {
+  color: var(--muted);
+  margin: 22px 0 0;
+  line-height: 2;
+}
+
+#s1 .logo-signature {
+  display: block;
+  text-align: center;
+  color: #A8C9E8;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+/* =========================
+   SECTION 3: OUR MEMORIES
+========================= */
+
+#s3 {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at top, rgba(28, 61, 96, .35), transparent 65%),
+    var(--bg);
+}
+
+.memories-section {
+  max-width: 1100px;
+}
+
+.memories-title {
+  font-family: Georgia, serif;
+  letter-spacing: .3px;
+}
+
+.memories-intro {
+  max-width: 760px;
+  margin: 0 auto 35px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 2.1;
+}
+
+.intro-memory {
+  max-width: 850px;
+  margin: 35px auto 0;
+  padding: 20px;
+  background: linear-gradient(145deg, #10243B, #0B1D32);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, .22);
+}
+
+.intro-memory-text {
+  padding: 8px 12px 20px;
+}
+
+.intro-memory-text span {
+  color: var(--accent);
+  font-size: .8rem;
+  letter-spacing: 3px;
+}
+
+.intro-memory-text h3 {
+  color: #D5E8FA;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  margin: 8px 0;
+}
+
+.intro-memory-text p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--muted);
+}
+
+.main-memory-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 520px;
+  object-fit: contain;
+  background: #030A12;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+}
+
+.video-caption {
+  margin: 12px 0 0;
+  color: #A8C9E8;
+  font-size: .9rem;
+}
+
+.memories-transition {
+  max-width: 760px;
+  margin: 65px auto;
+  padding: 30px 25px;
+  position: relative;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.transition-heart {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 2.4rem;
+  line-height: 1.4;
+}
+
+.memories-transition h3 {
+  color: #C6DDF2;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  margin: 5px 0 12px;
+}
+
+.memories-transition p {
+  color: var(--muted);
+  line-height: 2.2;
+  margin: 0;
+}
+
+.transition-signature {
+  display: block;
+  margin-top: 20px;
+  color: #A8C9E8;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.gallery-heading {
+  margin: 0 auto 25px;
+}
+
+.gallery-heading h3 {
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  margin: 8px 0;
+}
+
+.gallery-heading p {
+  color: var(--muted);
+  font-size: .9rem;
+  margin: 0;
+}
+
+.memories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.memory-card {
+  min-width: 0;
+  overflow: hidden;
+  padding: 10px;
+  background: rgba(16, 36, 59, .88);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .14);
+  transition: transform .25s, border-color .25s;
+}
+
+.memory-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.memory-card > p {
+  color: #C4D9ED;
+  font-size: .9rem;
+  margin: 7px 2px 0;
+  text-align: center;
+}
+
+.memory-photo {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: var(--accent-light);
+  border-radius: 12px;
+}
+
+.memory-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform .4s, opacity .3s;
+}
+
+.memory-photo:hover img {
+  transform: scale(1.04);
+  opacity: .85;
+}
+
+.photo-zoom {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: #E8F0F8;
+  background: rgba(7, 21, 37, .8);
+  border: 1px solid rgba(187, 217, 244, .4);
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.memory-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  background: #030A12;
+  border-radius: 12px;
+}
+
+.memory-video.landscape,
+.memory-photo.landscape img {
+  aspect-ratio: 16 / 9;
+}
+
+.memory-photo.portrait img {
+  aspect-ratio: 3 / 4;
+}
+
+.memory-photo.square img {
+  aspect-ratio: 1 / 1;
+}
+
+/* تكبير الصور */
+
+.memory-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: rgba(2, 8, 16, .94);
+  backdrop-filter: blur(8px);
+}
+
+.memory-lightbox.active {
+  display: flex;
+}
+
+.lightbox-inner {
+  width: min(900px, 100%);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, .45);
+}
+
+.lightbox-caption {
+  color: #D5E8FA;
+  text-align: center;
+  margin: 0;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  width: 44px;
+  height: 44px;
+  color: var(--text);
+  background: #10243B;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.lightbox-close:hover {
+  background: var(--accent-light);
+}
+
+/* Responsive */
+
+@media (max-width: 760px) {
+  #s1 .logo-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  #s1 .logo-envelope {
+    max-width: 360px;
+    min-height: 270px;
+  }
+
+  #s1 .logo-story {
+    padding: 20px;
+  }
+
+  .memories-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .intro-memory {
+    padding: 12px;
+  }
+
+  .memories-transition {
+    margin: 45px auto;
+    padding: 25px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 55px 16px;
+  }
+
+  nav {
+    gap: 3px;
+    padding: 9px 5px;
+  }
+
+  nav a {
+    font-size: .75rem;
+    padding: 4px 7px;
+  }
+
+  .card,
+  .envelope {
+    padding: 20px 16px;
+  }
+
+  .memories-grid {
+    gap: 9px;
+  }
+
+  .memory-card {
+    padding: 6px;
+    border-radius: 13px;
+  }
+
+  .memory-card > p {
+    font-size: .78rem;
+  }
+
+  .memory-photo img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .intro-memory-text {
+    padding: 8px 5px 16px;
+  }
+
+  .memory-lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-image {
+    max-height: 75vh;
+  }
+}
+
+
+/* SECTION 7: رسالة أحمد داخل الظرف */
+#s7 .s7-letter-envelope {
+  max-width: 900px;
+  margin: 28px auto 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #10243B, #0B1D32);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .22);
+}
+
+#s7 .s7-envelope-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 170px;
+  padding: 20px;
+  border: 1px solid rgba(115, 159, 200, .45);
+  border-radius: 17px;
+  color: var(--text);
+  background: linear-gradient(145deg, #173653, #0C1D31);
+  cursor: pointer;
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+#s7 .s7-envelope-trigger:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+#s7 .s7-envelope-icon {
+  font-size: 58px;
+  line-height: 1.2;
+}
+
+#s7 .s7-envelope-trigger span:last-child {
+  color: #BBD9F4;
+  font-weight: 600;
+}
+
+#s7 .s7-letter-content {
+  margin-top: 22px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(7, 21, 37, .55);
+  text-align: right;
+  animation: dreamReveal .45s ease both;
+}
+
+#s7 .s7-letter-content[hidden] {
+  display: none !important;
+}
+
+#s7 .s7-letter-content p {
+  white-space: pre-line;
+  line-height: 2.15;
+}
+</style>
+
+<style>
+/* لمسات عناوين السكاشن: هادية ومميزة من غير تغيير النصوص */
+section .section-inner > .number + h2,
+#s1 .number + h2 {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 12px auto 18px;
+  padding: 10px 22px 14px;
+  color: var(--text, #edf3fb);
+  line-height: 1.75;
+  letter-spacing: .01em;
+  text-wrap: balance;
+  background: linear-gradient(110deg, transparent, rgba(139, 174, 211, .07), transparent);
+  border-radius: 14px;
+  text-shadow: 0 4px 24px rgba(94, 150, 201, .12);
+}
+section .section-inner > .number + h2::after {
+  content: "";
+  position: absolute;
+  width: 58px;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #9dbbd7, transparent);
+  opacity: .8;
+}
+
+/* SECTION 2 — vintage scroll with an infinity ribbon; the original text and photo remain */
+#s2 .s2-keepsake-card { text-align: center; }
+#s2 .s2-scroll-trigger {
+  width: min(100%, 510px); min-height: 190px; margin: 5px auto 24px; padding: 22px 18px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px;
+  color: #e4d4b5; background: radial-gradient(ellipse at 50% 30%, #26364a, #101d2c 72%);
+  border: 1px solid rgba(213, 190, 145, .5); border-radius: 48% 48% 20px 20px / 24% 24% 20px 20px;
+  box-shadow: inset 0 0 30px rgba(216, 193, 151, .045), 0 14px 34px rgba(0,0,0,.17);
+  cursor: pointer; transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+#s2 .s2-scroll-trigger:hover { transform: translateY(-3px); border-color: rgba(235, 215, 174, .85); box-shadow: 0 15px 40px rgba(0,0,0,.24), 0 0 24px rgba(203,177,127,.08); }
+#s2 .s2-scroll-seal { display: block; width: 105px; color: #d7bd8e; filter: drop-shadow(0 0 9px rgba(215,189,142,.23)); }
+#s2 .s2-scroll-seal svg { width: 100%; height: auto; display: block; }
+#s2 .s2-scroll-title { font-size: clamp(1.1rem, 2.6vw, 1.4rem); font-weight: 600; letter-spacing: .02em; }
+#s2 .s2-scroll-hint { font-size: .88rem; color: #bdc8d4; }
+#s2 .s2-hidden-message { max-width: 850px; margin: 0 auto 24px; padding: clamp(18px, 4vw, 34px); text-align: right; border: 1px solid rgba(213,190,145,.25); border-radius: 14px; background: linear-gradient(145deg, rgba(21,35,49,.96), rgba(12,24,37,.97)); animation: keepsakeReveal .65s ease both; }
+#s2 .s2-hidden-message[hidden] { display: none !important; }
+#s2 .s2-hidden-message .description { margin-top: 0; }
+#s2 .s2-close-message { display: block; margin: 20px auto 0; padding: 10px 18px; color: #e4d4b5; border: 1px solid rgba(213,190,145,.4); border-radius: 999px; background: transparent; cursor: pointer; }
+#s2 .s2-keepsake-card > img { display: block; margin: 20px auto 0; }
+@keyframes keepsakeReveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* SECTION 7 — quiet letter card, not an envelope */
+#s7 .s7-letter-space { max-width: 900px; margin: 28px auto 0; padding: clamp(12px, 3vw, 24px); border: 1px solid rgba(145,176,204,.25); border-radius: 24px; background: linear-gradient(145deg, rgba(16,36,59,.88), rgba(8,24,41,.96)); box-shadow: 0 18px 50px rgba(0,0,0,.18); }
+#s7 .s7-envelope-trigger { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 180px; padding: 25px 18px; border: 1px solid rgba(157,190,220,.28); border-radius: 18px; color: var(--text, #eef4fb); background: radial-gradient(ellipse at top, rgba(117,157,193,.13), transparent 68%); cursor: pointer; transition: background .3s ease, border-color .3s ease; }
+#s7 .s7-envelope-trigger:hover { border-color: rgba(179,208,232,.62); background: radial-gradient(ellipse at top, rgba(117,157,193,.2), transparent 72%); }
+#s7 .s7-letter-orbit { color: #c0d5e8; font-family: Georgia, serif; font-size: 68px; line-height: .9; font-weight: 300; text-shadow: 0 0 22px rgba(158,199,232,.22); }
+#s7 .s7-trigger-title { color: #dce9f5; font-weight: 600; font-size: clamp(1.05rem, 2.5vw, 1.3rem); }
+#s7 .s7-trigger-hint { color: #a9bfd2; font-size: .9rem; }
+#s7 .s7-letter-content { margin-top: 20px; padding: clamp(18px, 4vw, 30px); border: 1px solid rgba(145,176,204,.2); border-radius: 16px; background: rgba(5,17,30,.42); text-align: right; animation: keepsakeReveal .5s ease both; }
+#s7 .s7-letter-content[hidden] { display: none !important; }
+#s7 .s7-letter-content p { white-space: pre-line; line-height: 2.15; }
+#s7 .s7-close-letter { display: block; margin: 24px auto 0; padding: 11px 22px; color: #dce9f5; border: 1px solid rgba(157,190,220,.38); border-radius: 999px; background: rgba(113,151,185,.08); cursor: pointer; transition: background .25s ease; }
+#s7 .s7-close-letter:hover { background: rgba(113,151,185,.17); }
+
+/* NEW WORLD — elegant moonlit sea and scattered video memories */
+#memorySeaWorld { --sea-ink: #e3edf8; --sea-silver: #c5d9eb; }
+#memorySeaWorld .sea-world-intro { text-align: center; color: var(--muted, #a9bacb); line-height: 1.9; margin: 0 auto 24px; }
+#memorySeaWorld .sea-world { position: relative; isolation: isolate; overflow: hidden; min-height: 680px; border: 1px solid rgba(160,192,220,.25); border-radius: 26px; background: #061421; color: var(--sea-ink); box-shadow: 0 22px 65px rgba(0,0,0,.24); }
+#memorySeaWorld .sea-sky, #memorySeaWorld .sea-water, #memorySeaWorld .sea-horizon, #memorySeaWorld .sea-reflection, #memorySeaWorld .sea-mist, #memorySeaWorld .sea-stars { position: absolute; inset: 0; pointer-events: none; }
+#memorySeaWorld .sea-sky { z-index: -5; background: radial-gradient(ellipse at 50% 18%, rgba(68,103,139,.42), transparent 32%), linear-gradient(180deg,#071525 0%,#10253a 48%,#0b2030 100%); }
+#memorySeaWorld .sea-water { z-index: -4; top: 43%; background: linear-gradient(180deg, rgba(10,31,47,.1), #061522 76%); }
+#memorySeaWorld .sea-horizon { z-index: -3; top: 43%; height: 1px; background: linear-gradient(90deg,transparent,rgba(187,211,230,.28),transparent); }
+#memorySeaWorld .sea-moon { position: absolute; z-index: -2; width: 68px; height: 68px; top: 2.5%; left: 50%; transform: translateX(-50%); border-radius: 50%; opacity: .42; background: radial-gradient(circle at 35% 30%, #b9c8d6 0%, #899fb4 38%, #5c758d 76%, rgba(67,91,112,.45) 100%); box-shadow: 0 0 12px rgba(156,184,207,.12), 0 0 32px rgba(115,151,181,.08); }
+#memorySeaWorld .sea-reflection { z-index: -1; top: 38%; left: 38%; width: 24%; height: 45%; inset-inline: auto; background: linear-gradient(180deg, rgba(224,239,251,.38), rgba(182,212,237,.18) 25%, rgba(168,204,233,.08) 60%, transparent); clip-path: polygon(43% 0,57% 0,100% 100%,0 100%); filter: blur(7px); opacity: .75; animation: seaReflection 7s ease-in-out infinite alternate; }
+#memorySeaWorld .sea-mist { z-index: -1; height: 40%; top: auto; bottom: -7%; background: radial-gradient(ellipse, rgba(95,133,163,.14), transparent 68%); filter: blur(14px); }
+#memorySeaWorld .sea-mist-one { animation: seaMistDrift 18s ease-in-out infinite alternate; }
+#memorySeaWorld .sea-mist-two { transform: translateX(25%); opacity: .55; animation: seaMistDrift 23s ease-in-out infinite alternate-reverse; }
+#memorySeaWorld .sea-stars { z-index: -2; opacity: .45; background-image: radial-gradient(circle, #eaf5ff 0.8px, transparent 1.4px), radial-gradient(circle, #c7d9e8 .7px, transparent 1.4px); background-size: 89px 73px, 127px 109px; background-position: 12px 17px, 48px 9px; }
+#memorySeaWorld .sea-entry { position: relative; z-index: 2; min-height: 680px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 13px; text-align: center; padding: 28px 16px; transition: opacity .8s ease, transform .8s ease; }
+#memorySeaWorld .sea-moon-trigger { position: relative; display: grid; place-items: center; width: 122px; height: 122px; border: 1px solid rgba(201,224,244,.5); border-radius: 50%; color: #e6f1fb; background: radial-gradient(circle, rgba(193,219,241,.16), rgba(9,27,43,.35) 68%, transparent); box-shadow: 0 0 40px rgba(167,205,235,.14), inset 0 0 25px rgba(167,205,235,.1); cursor: pointer; transition: transform .5s ease, box-shadow .5s ease; }
+#memorySeaWorld .sea-moon-trigger:hover { transform: scale(1.06); box-shadow: 0 0 60px rgba(184,216,241,.28), inset 0 0 25px rgba(167,205,235,.16); }
+#memorySeaWorld .sea-entry-crescent { font-family: Georgia, serif; font-size: 82px; line-height: 1; transform: rotate(-18deg); text-shadow: 0 0 20px rgba(219,237,252,.48); }
+#memorySeaWorld .sea-entry-glint { position: absolute; top: 15px; right: 22px; color: #fff; font-size: 17px; }
+#memorySeaWorld .sea-entry-label { margin: 12px 0 0; color: #d8e7f4; font-size: clamp(1.05rem, 2.5vw, 1.3rem); }
+#memorySeaWorld .sea-entry-hint { color: #91abc2; font-size: .88rem; }
+#memorySeaWorld .sea-memory-world { position: relative; z-index: 2; min-height: 680px; }
+#memorySeaWorld .sea-memory-world[hidden] { display: none !important; }
+#memorySeaWorld .sea-world.sea-open .sea-entry { display: none; }
+#memorySeaWorld .sea-world.sea-open .sea-moon { animation: seaMoonGlow 2s ease-out both; }
+#memorySeaWorld .sea-memory-line { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; padding: 104px 18px 0; text-align: center; color: #e4eff9; font-size: clamp(1.05rem, 2.8vw, 1.45rem); line-height: 1.9; text-shadow: 0 2px 16px rgba(174,212,240,.14); animation: keepsakeReveal .8s ease both; }
+#memorySeaWorld .sea-memory-line[hidden] { display: none !important; }
+#memorySeaWorld .sea-hidden-confession { display: inline-block; margin-inline-start: .18em; color: rgba(198,218,237,.13); filter: blur(4.5px); opacity: .22; text-shadow: 0 0 12px rgba(183,211,237,.22); cursor: pointer; transition: filter .45s ease, opacity .45s ease, color .45s ease, text-shadow .45s ease; outline: none; }
+#memorySeaWorld .sea-hidden-confession:hover, #memorySeaWorld .sea-hidden-confession:focus-visible, #memorySeaWorld .sea-hidden-confession.is-uncovered { color: #dceaf7; filter: blur(0); opacity: 1; text-shadow: 0 0 18px rgba(183,211,237,.3); }
+#memorySeaWorld .sea-hidden-confession::selection { color: #dceaf7; background: rgba(130,166,198,.35); }
+#memorySeaWorld .sea-secret-line { position: relative; z-index: 2; max-width: 760px; margin: 5px auto 0; padding: 5px 20px 0; text-align: center; color: rgba(205,223,240,.72); font-size: clamp(.94rem, 2.1vw, 1.12rem); line-height: 2; letter-spacing: .01em; }
+#memorySeaWorld .sea-secret-line[hidden] { display: none !important; }
+#memorySeaWorld .sea-video-field { position: relative; min-height: 580px; max-width: 1080px; margin: 0 auto; }
+#memorySeaWorld .sea-video-card { position: absolute; width: 190px; min-height: 128px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: right; color: #e6f1fb; border: 1px solid rgba(197,220,240,.42); border-radius: 13px; background: linear-gradient(145deg, rgba(137,171,201,.17), rgba(8,24,39,.72)); box-shadow: 0 10px 35px rgba(0,0,0,.2), inset 0 0 25px rgba(185,213,236,.04); backdrop-filter: blur(8px); cursor: pointer; opacity: 0; transform: translateY(14px) scale(.96); animation: none; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
+#memorySeaWorld .sea-world.sea-revealed .sea-video-card { animation: seaVideoAppear .7s ease forwards; }
+#memorySeaWorld .sea-video-card:hover, #memorySeaWorld .sea-video-card:focus-visible { z-index: 5; transform: translateY(-5px) scale(1.045); border-color: rgba(227,240,251,.82); box-shadow: 0 14px 38px rgba(0,0,0,.28), 0 0 25px rgba(166,205,235,.13); outline: none; }
+#memorySeaWorld .sea-video-number { color: #a9c6df; font: 12px Georgia,serif; letter-spacing: .15em; }
+#memorySeaWorld .sea-video-caption { font-size: .9rem; color: #e3edf7; }
+#memorySeaWorld .sea-video-card-1 { left: 8%; top: 9%; width: 210px; min-height: 150px; animation-delay: .15s; }
+#memorySeaWorld .sea-video-card-2 { right: 9%; top: 4%; width: 165px; min-height: 120px; animation-delay: .42s; }
+#memorySeaWorld .sea-video-card-3 { left: 35%; top: 16%; width: 175px; min-height: 116px; animation-delay: .68s; }
+#memorySeaWorld .sea-video-card-4 { right: 4%; top: 35%; width: 205px; min-height: 148px; animation-delay: .94s; }
+#memorySeaWorld .sea-video-card-5 { left: 7%; top: 42%; width: 155px; min-height: 112px; animation-delay: 1.2s; }
+#memorySeaWorld .sea-video-card-6 { left: 31%; top: 51%; width: 225px; min-height: 160px; animation-delay: 1.46s; }
+#memorySeaWorld .sea-video-card-7 { right: 28%; top: 61%; width: 145px; min-height: 105px; animation-delay: 1.72s; }
+#memorySeaWorld .sea-video-card-8 { right: 8%; top: 70%; width: 180px; min-height: 130px; animation-delay: 1.98s; }
+#memorySeaWorld .sea-video-card-9 { left: 12%; top: 76%; width: 170px; min-height: 122px; animation-delay: 2.24s; }
+#memorySeaWorld .sea-video-modal { position: fixed; z-index: 9999; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(2,9,16,.86); backdrop-filter: blur(12px); }
+#memorySeaWorld .sea-video-modal[hidden], .sea-video-modal[hidden] { display: none !important; }
+.sea-video-modal video { display: block; width: min(900px, 92vw); max-height: 82vh; border: 1px solid rgba(190,216,238,.32); border-radius: 15px; background: #02080d; box-shadow: 0 25px 80px rgba(0,0,0,.5); }
+.sea-video-close { position: fixed; top: 18px; right: 22px; width: 46px; height: 46px; border: 1px solid rgba(220,237,250,.35); border-radius: 50%; color: #edf6ff; background: rgba(12,30,46,.85); font-size: 30px; cursor: pointer; }
+@keyframes seaReflection { from { transform: scaleX(.82); opacity: .45; } to { transform: scaleX(1.12); opacity: .8; } }
+@keyframes seaMistDrift { from { transform: translateX(-4%) translateY(0); } to { transform: translateX(5%) translateY(-8px); } }
+@keyframes seaMoonGlow { 0% { filter: brightness(.55); opacity: .28; } 100% { filter: brightness(.72); opacity: .42; } }
+@keyframes seaVideoAppear { to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (max-width: 700px) {
+  #memorySeaWorld .sea-world, #memorySeaWorld .sea-entry, #memorySeaWorld .sea-memory-world { min-height: 620px; }
+  #memorySeaWorld .sea-video-field { min-height: 780px; }
+  #memorySeaWorld .sea-video-card { width: 42%; min-height: 105px; padding: 9px; }
+  #memorySeaWorld .sea-video-card-1 { left: 4%; top: 8%; width: 47%; min-height: 130px; }
+  #memorySeaWorld .sea-video-card-2 { right: 4%; top: 3%; width: 39%; min-height: 105px; }
+  #memorySeaWorld .sea-video-card-3 { left: 28%; top: 21%; width: 43%; min-height: 100px; }
+  #memorySeaWorld .sea-video-card-4 { right: 3%; top: 37%; width: 48%; min-height: 130px; }
+  #memorySeaWorld .sea-video-card-5 { left: 3%; top: 40%; width: 39%; min-height: 100px; }
+  #memorySeaWorld .sea-video-card-6 { left: 16%; top: 56%; width: 55%; min-height: 135px; }
+  #memorySeaWorld .sea-video-card-7 { right: 3%; top: 70%; width: 37%; min-height: 95px; }
+  #memorySeaWorld .sea-video-card-8 { left: 4%; top: 78%; width: 43%; min-height: 110px; }
+  #memorySeaWorld .sea-video-card-9 { right: 4%; left: auto; top: 88%; width: 42%; min-height: 95px; }
+  #s2 .s2-scroll-trigger { min-height: 165px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #memorySeaWorld *, #s2 .s2-hidden-message, #s7 .s7-letter-content { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+</style>
+
+
+<style id="requested-layout-overrides">
+/* OUR MOMENTS — صورتان، ثم الفيديوهات 2 + 2، وآخر فيديو بعرض كامل */
+#s3 .memories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+#s3 .memories-grid .memory-card {
+  width: 100%;
+  min-width: 0;
+}
+#s3 .memories-grid .memory-card:nth-child(1),
+#s3 .memories-grid .memory-card:nth-child(2) {
+  grid-column: span 1;
+}
+#s3 .memories-grid .memory-card:nth-child(n+3) .memory-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 420px;
+  object-fit: contain;
+  background: #030A12;
+}
+#s3 .memories-grid .memory-card:nth-child(7) {
+  grid-column: 1 / -1;
+}
+#s3 .memories-grid .memory-card:nth-child(7) .memory-video {
+  max-height: 560px;
+}
+#s3 .memories-grid .memory-photo img {
+  aspect-ratio: 4 / 5;
+}
+@media (max-width: 600px) {
+  #s3 .memories-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  #s3 .memories-grid .memory-card { padding: 7px; }
+  #s3 .memories-grid .memory-card > p {
+    font-size: .78rem;
+    line-height: 1.7;
+  }
+  #s3 .memories-grid .memory-card:nth-child(n+3) .memory-video {
+    aspect-ratio: 4 / 3;
+  }
+  #s3 .memories-grid .memory-card:nth-child(7) .memory-video {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* MEMORY SEA — ظرف وباسورد ومعرض ثابت وبسيط */
+#memorySeaWorld .sea-world {
+  min-height: 0;
+  padding: 34px 22px 42px;
+}
+#memorySeaWorld .sea-entry {
+  min-height: 470px;
+  transition: none;
+}
+#memorySeaWorld .sea-entry[hidden] { display: none !important; }
+#memorySeaWorld .sea-envelope-trigger {
+  width: 132px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(201,224,244,.5);
+  border-radius: 12px;
+  color: #e6f1fb;
+  background: linear-gradient(145deg, #183a58, #0a1d30);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  cursor: pointer;
+}
+#memorySeaWorld .sea-envelope-icon {
+  font-size: 55px;
+  line-height: 1;
+}
+#memorySeaWorld .sea-password-gate {
+  width: min(440px, 100%);
+  margin: 80px auto;
+  padding: 28px 24px;
+  text-align: center;
+  border: 1px solid rgba(180,207,231,.3);
+  border-radius: 18px;
+  background: rgba(7,21,37,.78);
+}
+#memorySeaWorld .sea-password-gate[hidden],
+#memorySeaWorld .sea-memory-world[hidden] { display: none !important; }
+#memorySeaWorld .sea-password-input {
+  display: block;
+  width: 100%;
+  margin: 16px 0 8px;
+  padding: 13px 15px;
+  color: #eef5fc;
+  background: #071525;
+  border: 1px solid #496783;
+  border-radius: 10px;
+  text-align: center;
+  font: inherit;
+  outline: none;
+}
+#memorySeaWorld .sea-password-input:focus { border-color: #a8c9e8; }
+#memorySeaWorld .sea-password-hint {
+  margin: 5px 0 16px;
+  color: #a9bfd2;
+  font-size: .9rem;
+}
+#memorySeaWorld .sea-password-button {
+  padding: 10px 28px;
+  color: #071525;
+  background: #a8c9e8;
+  border: 1px solid #c4ddf4;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+#memorySeaWorld .sea-password-error {
+  min-height: 28px;
+  margin: 12px 0 0;
+  color: #e6b7bd;
+  font-size: .9rem;
+}
+#memorySeaWorld .sea-memory-world {
+  min-height: 0;
+  padding: 24px 0 0;
+}
+#memorySeaWorld .sea-memory-line,
+#memorySeaWorld .sea-secret-line {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto 12px;
+  padding: 8px 12px;
+  text-align: center;
+  color: #dceaf7;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.9;
+  text-shadow: none;
+  animation: none;
+}
+#memorySeaWorld .sea-hidden-confession {
+  color: #dceaf7;
+  filter: none;
+  opacity: 1;
+  text-shadow: none;
+  cursor: default;
+}
+#memorySeaWorld .sea-gallery-heading {
+  margin: 30px auto 15px;
+  color: #dceaf7;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+#memorySeaWorld .sea-photo-grid,
+#memorySeaWorld .sea-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 940px;
+  margin: 0 auto;
+}
+#memorySeaWorld .sea-photo-card {
+  position: static;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgba(180,207,231,.28);
+  border-radius: 12px;
+  background: rgba(10,29,47,.88);
+  box-shadow: none;
+  opacity: 1;
+  animation: none;
+  transition: none;
+  cursor: pointer;
+}
+#memorySeaWorld .sea-photo-card:hover {
+  transform: none;
+  scale: 1;
+}
+#memorySeaWorld .sea-photo-card img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+#memorySeaWorld .sea-photo-card span {
+  display: block;
+  margin-top: 7px;
+  color: #dceaf7;
+  text-align: center;
+  font-size: .9rem;
+}
+#memorySeaWorld .sea-video-field {
+  min-height: 0;
+  max-width: 940px;
+  margin: 0 auto;
+}
+#memorySeaWorld .sea-video-card {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  min-height: 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  color: #e6f1fb;
+  border: 1px solid rgba(180,207,231,.28);
+  border-radius: 12px;
+  background: rgba(10,29,47,.88);
+  box-shadow: none;
+  opacity: 1;
+  transform: none;
+  animation: none !important;
+  transition: none;
+  cursor: pointer;
+  text-align: center;
+}
+#memorySeaWorld .sea-video-card:hover,
+#memorySeaWorld .sea-video-card:focus-visible {
+  transform: none;
+  border-color: rgba(180,207,231,.5);
+  box-shadow: none;
+}
+#memorySeaWorld .sea-video-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #02080d;
+  border-radius: 7px;
+}
+#memorySeaWorld .sea-video-play {
+  font-size: 1.25rem;
+  color: #c5d9eb;
+}
+#memorySeaWorld .sea-video-number { display: none; }
+#memorySeaWorld .sea-video-caption {
+  color: #dceaf7;
+  font-size: .9rem;
+}
+.sea-photo-viewer,
+.sea-video-modal {
+  position: fixed;
+  z-index: 99999;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(2,8,16,.94);
+}
+.sea-photo-viewer[hidden],
+.sea-video-modal[hidden] { display: none !important; }
+.sea-photo-viewer img {
+  max-width: 92vw;
+  max-height: 86vh;
+  object-fit: contain;
+  border: 1px solid rgba(190,216,238,.32);
+  border-radius: 12px;
+}
+.sea-photo-close,
+.sea-video-close {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  color: #eef5fc;
+  background: #10243b;
+  border: 1px solid #496783;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.sea-video-modal video {
+  width: min(900px, 92vw);
+  max-height: 82vh;
+  background: #02080d;
+  border-radius: 12px;
+}
+@media (max-width: 600px) {
+  #memorySeaWorld .sea-world { padding: 22px 12px 30px; }
+  #memorySeaWorld .sea-entry { min-height: 390px; }
+  #memorySeaWorld .sea-password-gate { margin: 45px auto; padding: 22px 16px; }
+  #memorySeaWorld .sea-photo-grid,
+  #memorySeaWorld .sea-video-grid { gap: 9px; }
+  #memorySeaWorld .sea-photo-card img { height: 175px; }
+  #memorySeaWorld .sea-photo-card { padding: 5px; }
+  #memorySeaWorld .sea-photo-card span,
+  #memorySeaWorld .sea-video-caption { font-size: .78rem; }
+}
+
+/* SECTION 10 — كتاب حكاية عمرنا الجاي */
+#s10 {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(47,78,111,.24), transparent 58%),
+    #071525;
+}
+#s10 .future-intro-card {
+  max-width: 760px;
+  margin: 22px auto;
+  padding: 22px;
+  color: #dce9f5;
+  background: linear-gradient(145deg, rgba(16,36,59,.9), rgba(8,24,41,.96));
+  border: 1px solid rgba(157,190,220,.25);
+  border-radius: 18px;
+}
+#s10 .future-start-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto 8px;
+  padding: 14px 32px;
+  color: #071525;
+  background: linear-gradient(135deg, #d9bd82, #b99458);
+  border: 1px solid #f0dba9;
+  border-radius: 999px;
+  box-shadow: 0 8px 25px rgba(185,148,88,.2);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+#s10 .future-start-button:hover { background: #e6cf9e; }
+#s10 .future-once-upon {
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  margin: 24px auto;
+  color: #ead8b1;
+  font-family: Georgia, serif;
+  font-size: clamp(2.6rem, 8vw, 5.8rem);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: .02em;
+  opacity: 0;
+  visibility: hidden;
+}
+#s10 .future-story.started .future-once-upon {
+  visibility: visible;
+  animation: futureWordsFade 2.4s ease forwards;
+}
+@keyframes futureWordsFade {
+  0% { opacity: 0; transform: translateY(12px); }
+  22%, 62% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+#s10 .future-book-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+#s10 .future-story.book-visible .future-book-wrap {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+#s10 .future-book {
+  position: relative;
+  padding: 18px;
+  border: 1px solid #b99b65;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #132b43, #071525);
+  box-shadow: 0 25px 65px rgba(0,0,0,.35);
+  perspective: 1600px;
+}
+#s10 .future-story.book-visible .future-book {
+  transform-origin: left center;
+  animation: futureBookOpen 1.35s cubic-bezier(.2,.75,.25,1) both;
+}
+@keyframes futureBookOpen {
+  0% { opacity: .45; transform: perspective(1600px) rotateY(-13deg) scale(.97); }
+  65% { opacity: 1; transform: perspective(1600px) rotateY(3deg) scale(1.005); }
+  100% { opacity: 1; transform: perspective(1600px) rotateY(0) scale(1); }
+}
+#s10 .future-book-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  direction: ltr;
+  gap: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e9dfc9;
+  box-shadow: inset 0 0 20px rgba(72,52,28,.12);
+}
+#s10 .future-book-image-side {
+  min-width: 0;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #e7dcc5, #f0e7d5);
+  border-right: 1px solid rgba(83,66,43,.18);
+}
+#s10 .future-book-image {
+  display: block;
+  width: 100%;
+  height: 480px;
+  max-height: 480px;
+  object-fit: contain;
+  border: 7px solid #f8f1e5;
+  background: #e9dfc9;
+  box-shadow: 0 5px 18px rgba(40,30,18,.18);
+}
+#s10 .future-book-text {
+  min-width: 0;
+  padding: clamp(22px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  direction: rtl;
+  text-align: right;
+  color: #283548;
+  background: linear-gradient(90deg, #f0e7d5, #e9dfc9);
+}
+#s10 .future-page-number {
+  color: #9b835c;
+  font-family: Georgia, serif;
+  font-size: .9rem;
+  letter-spacing: 2px;
+}
+#s10 .future-page-title {
+  margin: 12px 0 16px;
+  color: #24364b;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+}
+#s10 .future-page-copy {
+  margin: 0;
+  color: #354256;
+  font-size: clamp(.96rem, 1.55vw, 1.1rem);
+  line-height: 1.95;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+#s10 .future-book-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+#s10 .future-page-button {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: #e5d2a7;
+  background: #10243b;
+  border: 1px solid rgba(211,185,132,.65);
+  border-radius: 50%;
+  font: 30px/1 Georgia, serif;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background .2s ease, opacity .2s ease, border-color .2s ease;
+}
+#s10 #futurePrevPage { right: -22px; }
+#s10 #futureNextPage { left: -22px; }
+#s10 .future-page-button:hover:not(:disabled) {
+  background: #1a3856;
+  border-color: #d3b984;
+}
+#s10 .future-page-button:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+#s10 .future-page-count {
+  color: #c8d8e7;
+  font-size: .9rem;
+}
+#s10 .future-book-wrap[hidden] { display: none !important; }
+#s10 .future-book-text [hidden],
+#s10 .future-book-image-side [hidden] { display: none !important; }
+#s10 .future-pair-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 12px;
+}
+#s10 .future-pair-card {
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+#s10 .future-pair-card img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  max-width: 100%;
+  object-fit: contain;
+  background: #e9dfc9;
+  border: 5px solid #f8f1e5;
+  box-shadow: 0 5px 18px rgba(40,30,18,.16);
+}
+#s10 .future-pair-card figcaption,
+#s10 .future-empty-caption {
+  min-height: 42px;
+  margin: 8px 0 0;
+}
+#s10 .future-special-right {
+  justify-content: flex-start;
+  padding: 16px;
+}
+#s10 .future-full-page-image {
+  display: block;
+  width: 100%;
+  height: 430px;
+  max-height: 480px;
+  object-fit: contain;
+  background: #e9dfc9;
+  border: 7px solid #f8f1e5;
+  box-shadow: 0 5px 18px rgba(40,30,18,.18);
+}
+#s10 .future-special-caption {
+  min-height: 48px;
+  margin-top: 10px;
+  color: #354256;
+  font-size: clamp(.95rem, 1.5vw, 1.08rem);
+  line-height: 1.9;
+  white-space: pre-line;
+  text-align: right;
+}
+@media (max-width: 700px) {
+  #s10 .future-pair-card img { height: 250px; }
+  #s10 .future-full-page-image { height: 330px; }
+}
+@media (max-width: 700px) {
+  #s10 .future-book { padding: 9px; }
+  #s10 .future-book-spread { grid-template-columns: 1fr; }
+  #s10 .future-book-image-side { padding: 12px; border-right: 0; border-bottom: 1px solid rgba(83,66,43,.18); }
+  #s10 .future-book-image { height: 330px; max-height: 330px; }
+  #s10 .future-book-text { padding: 22px 18px; }
+  #s10 .future-book-controls { gap: 7px; }
+  #s10 .future-page-button { width: 38px; height: 38px; font-size: 26px; }
+  #s10 #futurePrevPage { right: 2px; }
+  #s10 #futureNextPage { left: 2px; }
+}
+</style>
+
+</head>
+
+<body>
+  <br>
+  <p>♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡</p>
+
+
+<header id="home">
+  <div class="heart">♡</div>
+  <h1>♡ ONLY WE KNOW ♡</h1>
+  <p>حكاية صغيرة... محدش يعرفها غيرنا ❤️</p>
+  <button class="primary-btn"
+    onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})">
+    تعالى نبدأ حكايتنا
+  </button>
+</header>
+
+<nav>
+  <a href="#s1">كل حكاية وليها رمز</a>
+  <a href="#s2">♡علامة مميزة♡</a>
+  <a href="#s3">حكاياتنا</a>
+  <a href="#s4">♡حتة أمان</a>
+  <a href="#s5">احن عيون</a>
+  <a href="#s6">♡البداية بعد لمعه عينك♡</a>
+  <a href="#s7">مهما حصل بينا</a>
+  <a href="#s8">لو نسيت</a>
+  <a href="#s9">♡ رسالة سرية ♡</a>
+  <a href="#s10">♡ حلمنا ♡</a>
+</nav>
+
+<!-- 1: OUR LOGO -->
+<br>
+<p>♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡
+♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡ ♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆</p>
+
+
+<section id="s1">
+  <div class="logo-section">
+
+    <div class="number">01 — OUR STORY</div>
+    <h2 class="logo-main-title">ONLY WE KNOW ♡</h2>
+    <div class="divider"></div>
+
+    <div class="logo-layout">
+
+      <div class="logo-envelope-area">
+
+        <button
+          type="button"
+          class="logo-envelope"
+          id="logoEnvelope"
+          onclick="openLogoEnvelope()"
+          aria-label="افتح الظرف وشوف اللوجو">
+
+          <span class="envelope-icon" aria-hidden="true">💌</span>
+
+          <p class="envelope-hint">
+            💌 افتح الظرف واكتشف الحكاية اللي جواه
+          </p>
+
+          <img
+            class="logo-photo"
+            id="logoPhoto"
+            src="photo.jpg/logo.jpeg"
+            alt="اللوجو بتاعنا">
+
+          <p class="opened-note">
+            حكاية صغيرة اتخبّت في رسمة وبقت علامة محدش في الدنيا هيفهم معناها غيرنا
+          </p>
+        </button>
+
+        <p class="description">
+          💌 معمولك بكل حب يا حبي إنت 💌
+        </p>
+
+      </div>
+
+      <div class="logo-story">
+
+        <p class="logo-intro">
+          في حاجات كتير ممكن الناس تشوفها عادية لكن بالنسبالنا ليها حكاية وذكرى وإحساس محدش يقدر يفهمه زينا
+        </p>
+
+        <div class="logo-meaning">
+          <h3>الحروف المتداخلة</h3>
+          <p>
+            بتعبر عن حكايتين اتقابلوا وبقوا جزء من بعض
+            وعن تفاصيل صغيرة اتجمعت مع الوقت وعملت حاجة تخصنا إحنا وبس
+          </p>
+        </div>
+
+        <div class="logo-meaning">
+          <h3>البجعتين</h3>
+          <p>
+            رمز للقرب والوفاء وإن فيه أشخاص بيكون ليهم مكان مختلف جوانا مهما اتغيرت الأيام
+          </p>
+        </div>
+
+        <div class="logo-meaning">
+          <h3>النجمة</h3>
+          <p>
+            بتعبر عن النور اللي شخص ممكن يسيبه في حياة شخص تاني وعن اللمعة اللي بتفضل موجودة في الذاكرة حتى لو الدنيا اتغيرت
+          </p>
+        </div>
+
+        <div class="logo-meaning">
+          <h3>العقرب</h3>
+          <p>
+            رمز للقوة والغموض والحاجة المختلفة اللي مش أي حد يقدر يفهمها من أول نظرة
+          </p>
+        </div>
+
+        <p class="logo-ending">
+          وفي الآخر كل تفصيلة في اللوجو بتقول إن مش كل الحكايات محتاجة تتشرح وإن مش كل المشاعر ينفع تتحكي وإن فيه حاجات مهما اتكلمنا عنها مش هيفهم معناها الحقيقي غير أصحابها. يمكن الناس تشوفه لوجو وخلاص لكن إحنا عارفين إن وراه حكاية وتفاصيل كتير اختارتها علشاننا مخصوص
+          <br><br>
+          لأن ببساطة فيه حاجات هتفضل ليها معنى خاص عندنا إحنا وبس.
+        </p>
+
+        <span class="logo-signature">ONLY WE KNOW ♡</span>
+
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<p>♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡
+♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡ ♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆</p>
+
+
+
+
+<!-- 2: YOUR LITTLE DETAILS -->
+
+<section id="s2">
+  <div class="section-inner">
+    <div class="number">02 — YOUR LITTLE DETAILS</div>
+    <h2>تفاصيل فيها ريحتك</h2>
+    <div class="divider"></div>
+
+    <div class="card soft s2-keepsake-card">
+      <button type="button" class="s2-scroll-trigger" id="s2ScrollTrigger"
+        aria-expanded="false" aria-controls="s2HiddenMessage" onclick="toggleS2Message()">
+        <span class="s2-scroll-seal" aria-hidden="true">
+          <svg viewBox="0 0 120 76" role="img" aria-label="فيونكة ما لا نهاية">
+            <path d="M60 38 C45 8 7 8 13 30 C18 48 43 43 60 38 C77 33 102 28 107 46 C113 68 75 67 60 38 C45 67 7 68 13 46 C18 28 43 33 60 38 C77 43 102 48 107 30 C113 8 75 8 60 38" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M60 38 C53 26 53 16 60 10 C67 16 67 26 60 38Z" fill="currentColor" opacity=".6"/>
+          </svg>
+        </span>
+        <span class="s2-scroll-title">رسالة مربوطة بحكايتنا</span>
+        <span class="s2-scroll-hint">اضغط على الفيونكة علشان تفتح الرسالة</span>
+      </button>
+      <div class="s2-hidden-message" id="s2HiddenMessage" hidden>
+      <p class="description">
+        تفاصيل صغيرة يمكن محدش ياخد باله منها بس أنا بحبها عشان هي منك.
+        اخترت أحط الجملة دي جوا الهودي مخصوص عشان «بطوط نن عيون أحمد» مش مجرد كلمتين مكتوبين.. دي أنا زي ما بحب أكون معاك يا أحمد البنت الصغيرة اللي نفسها تفضل نن عيونك واللي بتحب إحساس إنها ليها حتة في قلبك محدش غيرها يعرف يوصلها. ❤️
+
+        <br><br>
+
+        اسم «بطوط» بالنسبالي مش مجرد اسم دلع بتقولهولي ده اسم بقيت بحبه عشان هو منك وعشان كل مرة بتندهلي بيه بحس إن ليا مكان مخصوص عندك. يمكن إنت مش متخيل الاسم ده بيفرحني قد إيه بس أنا بحب إحساسي وأنا بطوط بتاعتك وبحب إن فيه حاجة صغيرة بينا محدش محتاج يفهم معناها غيرنا. ❤️🧸
+
+        <br><br>
+
+        أنا معاك مش عايزة أفضل كبيرة وقوية طول الوقت أنا بحب أرجع بنت صغيرة أدلع عليك وأهزر معاك وأنكشك وأغيظك وأوقات أعاندك كمان.. بس في الآخر أبقى مطمنة إنك جنبي. نفسي أفضل البنت اللي لما تزعل تجري عليك ولما تفرح تبقى إنت أول واحد تحكيله ولما تخاف تلاقي أمانها في وجودك.
+
+        <br><br>
+
+        يمكن عشان كده اخترت أكتب الجملة دي جوا الهودي بالذات عشان فيها حاجة من اللي بحبها في علاقتنا.. إني أكون حبيبتك وفي نفس الوقت بنتك الصغيرة اللي بتدلع عليها وتحنّ عليها وتخليها تحس إنها مش مضطرة تشيل الدنيا لوحدها.
+
+        <br><br>
+
+        <strong>
+          بطوط اللي بتحبك أوي واللي نفسها تفضل نن عيونك ودلوعتك وحبيبتك واللي مهما كبرت هيفضل جواها الجزء الصغير اللي بيفرح لما تناديها باسمها اللي بتحبه منك. ❤️
+        </strong>
+
+        <br><br>
+
+        فكل ما تلبس الهودي ده افتكر إن فيه بطوط اختارت تحط جواه حاجة من قلبها مش عشان الكلام حلو وخلاص لكن عشان دي فعلًا الصورة اللي بتحب تكون بيها معاك.. بنتك الصغيرة وحبيبتك وبطوط بتاعتك. ❤️🧸
+      </p>
+      <button type="button" class="s2-close-message" onclick="toggleS2Message(false)">لفّ الرسالة تاني</button>
+      </div>
+
+      <img
+        src="photo.jpg/WhatsApp Image 2026-10-21 at 7.58.40 PM.jpeg"
+        alt="تفاصيل خاصة"
+        width="400"
+        height="400"
+        loading="lazy"
+        style="object-fit:contain;border-radius:16px;border:1px solid var(--border);">
+    </div>
+  </div>
+</section>
+<br>
+<p>♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡
+♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡ ♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆</p>
+
+<!-- 3: OUR MEMORIES -->
+
+<section id="s3">
+  <div class="section-inner memories-section">
+
+    <div class="number">03 — OUR MEMORIES</div>
+
+    <h2 class="memories-title">
+      حكاياتنا اللي محدش يعرفها عننا ♡
+    </h2>
+
+    <div class="divider"></div>
+
+    <p class="memories-intro">
+      مش كل الذكريات بتتحكي بالكلام
+      في ذكريات بتفضل عايشة جوانا بصورة أو فيديو أو حتى لحظة صغيرة
+      وكل حاجة هنا ليها حكاية محدش يعرف معناها الحقيقي غيرنا إحنا الاتنين جزء صغير من الفيديوهات اللي كنت بتعترض اننا نصورها
+    </p>
+
+    <div class="intro-memory">
+
+      <div class="intro-memory-text">
+        <span>OUR LITTLE WORLD ♡</span>
+        <h3>تعالى نفتكر حكايتنا</h3>
+        <p>
+          يمكن الفيديو ده مجرد لحظات متجمعة
+          بس بالنسبالي كل لحظة فيه حتة من حكايتنا
+          وحاجة بحب أرجعلها كل ما افتقد وجودنا سوا... بحبك وبحب وجودك وبحب كل حاجه عشتها معاك وعيشناها سوا.
+        </p>
+      </div>
+
+      <video
+        class="main-memory-video"
+        controls
+        playsinline
+        preload="metadata">
+        <source src="Videos/WhatsApp Video 2026-10-21 at 8.38.39 PM (1).mp4" type="video/mp4">
+        المتصفح لا يدعم تشغيل الفيديو.
+      </video>
+
+      <p class="video-caption">
+        🎀الواد بتاعي اللي أنا بحبه حب مش طبيعي🎀 <br>🎀حتة السكر اللي في أيامي 🍓🎀
+      </p>
+
+    </div>
+
+    <div class="memories-transition">
+      <span class="transition-heart">♡</span>
+
+      <h3>وكل صورة وراها حكاية</h3>
+
+      <p>
+        تعالى نرجع لكل لحظة من دول واحدة واحدة
+        للضحكة اللي طلعت من القلب
+        وللتفاصيل اللي يمكن عدّت عادي وقتها
+        بس بقت غالية لما رجعنا نفتكرها
+        وللحاجات اللي مهما الأيام عدّت هتفضل جزء من حكايتنا
+      </p>
+
+      <span class="transition-signature">
+        ONLY WE KNOW ♡
+      </span>
+    </div>
+
+    <div class="memories-gallery">
+
+      <div class="gallery-heading">
+        <span class="number">OUR MOMENTS</span>
+        <h3>شوية من كل حاجة بنحبها ♡</h3>
+        <p>اضغط على أي صورة عشان تشوفها أكبر</p>
+      </div>
+
+
+      <div class="memories-grid">
+
+        <!-- الصورة الأولى -->
+        <div class="memory-card">
+          <button
+            type="button"
+            class="memory-photo"
+            data-image="photo.jpg/WhatsApp Image 2026-10-21 at 9.17.18 PM.jpeg"
+            data-caption="حاجات عمرها ما تعدي عليا كداااا"
+            aria-label="تكبير الصورة الأولى">
+            <img src="photo.jpg/WhatsApp Image 2026-10-21 at 9.17.18 PM.jpeg" alt="ذكرى لينا" loading="lazy">
+            <span class="photo-zoom">♡</span>
+          </button>
+          <p>
+           حاجات عمرها ما تعدي عليا كداااا
+          </p>
+        </div>
+
+
+        <!-- الصورة الثانية -->
+        <div class="memory-card">
+          <button
+            type="button"
+            class="memory-photo"
+            data-image="photo.jpg/Wwwwwwwwwww.jpeg"
+            data-caption="صوره بعنوان لو ناسي افكرك ي كتكوت"
+            aria-label="تكبير الصورة الثانية">
+            <img src="photo.jpg/Wwwwwwwwwww.jpeg" alt="ذكرى تانية لينا" loading="lazy">
+            <span class="photo-zoom">♡</span>
+          </button>
+          <p>
+   صوره بعنوان <br>لو ناسي افكرك ي كتكوت
+          </p>
+        </div>
+
+
+        <!-- الفيديو الأول -->
+        <div class="memory-card">
+          <video class="memory-video"
+            controls
+            playsinline
+            preload="metadata">
+            <source src="Videos/WhatsApp Video 2026.mp4" type="video/mp4">
+            المتصفح لا يدعم تشغيل الفيديو.
+          </video>
+          <p>            اقرب فيديو لقلبي بجد <br>والكلام اللي عليه اكتر حاجه بتمناها من كل قلبي بجد 💗
+            ♡
+          </p>
+        </div>
+
+
+        <!-- الفيديو الثاني -->
+        <div class="memory-card">
+          <video class="memory-video"
+            controls
+            playsinline
+            preload="metadata">
+            <source src="Videos/WhatsApp Video 2026 2.mp4" type="video/mp4">
+            المتصفح لا يدعم تشغيل الفيديو.
+          </video>
+          <p>
+            الواد بتاعي اللي بعد كل ده كان عايز يخلّص الحكاية..<br>بعد ما عاش معايا كل ده..<br>لسه بدري على التخلص من بطوط ي حبيب عمري انت
+            ♡
+          </p>
+        </div>
+
+        <!-- الفيديو الثالث -->
+        <div class="memory-card">
+          <video class="memory-video"
+            controls
+            playsinline
+            preload="metadata">
+            <source src="Videos/WhatsApp Video 2026 3.mp4" type="video/mp4">
+            المتصفح لا يدعم تشغيل الفيديو.
+          </video>
+          <p>
+          <br>  💋💋💋💋💋💋💋💋A7MODYYYYYYYYY 💋💋💋💋💋💋💋💋💋<br>💋 MY 💋<br> 💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋SHAAAAALAAAAAAAAA💋💋💋💋💋💋💋💋💋<br>💋💋💋💋💋💋💋💋💋
+
+          </p>
+        </div>
+
+        <!-- الفيديو الثالث -->
+        <div class="memory-card">
+          <video class="memory-video"
+            controls
+            playsinline
+            preload="metadata">
+            <source src="Videos/WhatsApp Video 2026 4.mp4" type="video/mp4">
+            المتصفح لا يدعم تشغيل الفيديو.
+          </video>
+          <p>
+      💋💋💋اموت ف الراجل المدلوق 💋💋💋
+      <br>
+      عرفت الباص كلو بتغني لمين بنظراتك دي
+                    </p>
+        </div>
+
+        <!-- الفيديو الثالث -->
+        <div class="memory-card">
+          <video class="memory-video"
+            controls
+            playsinline
+            preload="metadata">
+            <source src="Videos/WhatsApp Video 2026 5.mp4" type="video/mp4">
+            المتصفح لا يدعم تشغيل الفيديو.
+          </video>
+          <p>
+            نفسي تعرف إنك من الحاجات اللي قلبي بيحمد ربنا عليها، وإن مفيش حاجة بتطمنّي قد إحساسي إني قريبة منك. بحب أسمع صوتك، وبحب أوي لما أحس إن قلبك مرتاح معايا، وإنك بتشاركني حتة منك محدش بيشوفها غيري. نفسي أفضل ليك المكان اللي بترتاح فيه من كل حاجة، والحد اللي تحب تحكيله عن يومك حتى لو مفيش حاجة مهمة حصلت، واللي تلاقيه جنبك في كل حالاتك من غير ما تحتاج تشرح أو تطلب. أنا مش عايزة من الدنيا كتير ي حبيبي أنا كل اللي نفسي فيه إننا نفضل قريبين من بعض، وإنك تفضل تحس معايا بنفس الاحساس الحلو دا، وأفضل أنا بطوط اللي بتحبها وتطمن معاها، زي ما إنت بقيت لقلبي حتة حنينة أوي، معرفش أتخيل أيامي من غيرها.
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- نافذة تكبير الصور -->
+
+<div
+  class="memory-lightbox"
+  id="memoryLightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="عرض الصورة بالحجم الكبير">
+
+  <button
+    type="button"
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="إغلاق الصورة">
+    ×
+  </button>
+
+  <div class="lightbox-inner">
+    <img class="lightbox-image" id="lightboxImage" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+</div>
+<br>
+<p>♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡
+♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡ ♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆</p>
+
+<!-- 4: YOUR HAND -->
+
+<section id="s4">
+  <div class="section-inner">
+
+    <div class="number">04 — YOUR HAND</div>
+
+    <h2>أول إيد لمستها وأحن إيد تلمسني</h2>
+
+    <div class="divider"></div>
+
+    <img
+      src="photo.jpg/WhatsApp Image 2026.jpeg"
+      alt="إيدينا"
+      height="350"
+      width="225"
+      loading="lazy"
+    >
+
+    <div class="card soft">
+      <p class="description">
+«حتى وإنت ساكت، إيدك بتعرف تحكيلي قد إيه إنت بتحبني.»
+      </p>
+    </div>
+
+
+    <!-- الفيديو الأول -->
+    <div class="memory-card">
+
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        width="450"
+      >
+        <source
+          src="Videos/WhatsApp Video hand).mp4"
+          type="video/mp4"
+        >
+        المتصفح لا يدعم تشغيل الفيديو.
+      </video>
+
+      <p>
+        «إزاي لمسة صغيرة منك قدرت تخلّي قلبي يحس بكل الحب ده» ♡
+      </p>
+
+    </div>
+
+  </div>
+</section>
+<br>
+<p>♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡
+♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡ ♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆</p>
+
+<!-- 5: YOUR EYES -->
+
+<section id="s5">
+  <div class="section-inner">
+    <div class="number">05 — YOUR EYES</div>
+    <h2>العيون اللي خطفت قلبي وبقت بيتي</h2>
+    <div class="divider"></div>
+
+    <div class="card">
+      <p class="description">
+
+        أظن بعد الفيديوهات دي هتفهم ليه كنت بفضل باصة في عيونك وساكتة، إنت مش متخيل الجمال والحنية اللي عيني شايفاهم فيك. عيونك هي الحاجة الوحيدة اللي مش مستعدة أتحرم أبدًا من إني أبص فيها. يارب أفضل أشوف عيونك دي طول عمري، وأفضل أنا السبب في اللمعة اللي فيها دي دايمًا.
+              </p>
+    </div>
+    <div class="memory-card">
+
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        width="360"
+
+
+      >
+        <source
+          src="Videos/WhatsApp 3yoon.mp4"
+          type="video/mp4"
+        >
+        المتصفح لا يدعم تشغيل الفيديو.
+      </video>
+    </div>
+
+    <br>
+    ♡⋆｡˚ ☾ ˚｡⋆ 𝐼 𝐿𝑜𝓋𝑒 𝒴𝑜𝓊 𝒜𝒽𝓂𝑜𝓊𝒹y ♡⋆｡˚ ☾ ˚｡⋆
+    <br>
+    <br>
+
+
+<div class="memory-card">
+
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        width="330"
+      >
+        <source
+          src="Videos/WhatsApp Video 3eyoon.mp4"
+          type="video/mp4"
+        >
+        المتصفح لا يدعم تشغيل الفيديو.
+      </video>
+
+      <p>«يارب أفضل أشوف عيونك قدامي طول العمر، وأصحى كل يوم ألاقيك جنبي، وأبقى مراتك وحبيبتك والونس اللي ميفارقكش، ونعيش سوا كل الأيام اللي لسه بنحلم بيها، لحد ما نكبر وتفضل عيوني تحب عيونك بنفس اللهفة دي.»
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 6: OUR SONG -->
+
+<section id="s6">
+  <div class="section-inner">
+    <div class="number">06 — OUR SONG</div>
+    <h2>حبيت أفكّرك بأغنيتنا</h2>
+    <div class="divider"></div>
+
+    <div class="card soft">
+      <p>
+        يمكن دي أغنية بالنسبه لاي حد بس لينا و خصوصا بالنسبالي دي تفصيلة مهمه اوووي عندي وكمان محدش يعرف بيها غيرنا
+      </p>
+
+      <img
+        src="photo.jpg/FB_IMG_.jpg"
+        alt="صورة أغنيتنا"
+        loading="lazy"
+        style="display:block;width:min(280px,100%);height:auto;max-height:340px;object-fit:cover;border-radius:16px;border:1px solid var(--border);margin:20px auto;">
+
+      <div style="margin-top:20px;">
+        <p>♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡ </p>
+
+        <a
+          href="https://www.youtube.com/results?search_query=أنا+بيكي"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="primary-btn">
+          اسمع أغنيتنا
+        </a>
+        <p>يمكن إنت اخترت الأغنية دي علشان تلمّحلي بحاجة وقتها، بس أنا مكنتش أعرف إنها هتبقى من الحاجات اللي كل ما أسمعها أحس إني بسمعك إنت</p>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<p>♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡
+♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡ ♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆</p>
+
+
+
+<!-- 7: ALWAYS -->
+
+<section id="s7">
+  <div class="section-inner">
+    <div class="number">07 — ALWAYS</div>
+    <h2>مهما حصل فأنت حبيبي ونور عيوني اللي ماليش غيره 💌</h2>
+    <h3>ممكن نقول دي رساله صغننه  نفصل بيها اللي فات عن اللي جاي سواء ف الويب سايت هنا او في حياتنا > خد نفس عميق وهااااااادي اوووووي علشان تقرا الكلام دا</h3>
+    <h3>متنساش تبقا هادي وتفصل عقلك دلوقتي عن حياتنا </h3>
+    <h3>كل اللي محتاجاه منك دلوقتي تفتكر اول نظره ليك ف عيون اسما و اول خروجه بينكوا و اول بحبك قولتها ليها وسمعتها منها افتكر كل اللي يخلي قلبك احن دلوقتي علي اسما</h3>
+    <h3>اظن دلوقتي انت جاهز تقرا كلامي اللي جاي</h3>
+    <div class="divider"></div>
+
+    <div class="s7-letter-envelope s7-letter-space">
+      <button type="button" class="s7-envelope-trigger" id="s7EnvelopeTrigger"
+        aria-expanded="false" aria-controls="s7LetterContent"
+        onclick="toggleAhmedLetter()">
+        <span class="s7-letter-orbit" aria-hidden="true">∞</span>
+        <span class="s7-trigger-title">رسالة هادية من قلبي</span>
+        <span class="s7-trigger-hint">افتحها وقت ما تكون مستعد تقراها</span>
+      </button>
+
+      <div class="s7-letter-content" id="s7LetterContent" hidden>
+      <p class="description">
+        إلى روحي ونور عيوني أحمد...
+      <br>
+
+      يمكن إنت متعرفش أنا عديت بإيه في الفترة اللي فاتت وقد إيه كان فيه أيام صعبة عليا وحاجات كتير حصلت مكنتش عارفة أتعامل معاها لوحدي كان فيه وقت محتاجة فيه حد يطمني وحد أحكيله من غير ما أفكر كتير وحد أحس معاه إن الدنيا لسه فيها حاجة حلوة وكنت بتمنى إنك تكون موجود
+
+      مش هقول إن كل حاجة كانت وحشة بس الحقيقة إن حاجات كتير كانت أصعب مما كنت متخيلة وإن فيه وجع عديت بيه وأنا بحاول أبان قوية وأكمّل يومي عادي مع إن جوايا مكنش عادي خالص
+
+      <br>أنا تعبت يا أحمد من كتر الحاجات اللي حصلت ومن إني كل مرة أحاول أقف على رجلي وأكمّل ألاقي نفسي محتاجة أبدأ من جديد وفي أوقات كتير كنت بتمنى إن كل ده يكون مجرد فترة صعبة وهتعدّي وإن ييجي يوم أحس فيه إن خلاص كفاية وجع لحد هنا
+
+      نفسي بجد يكون كل الوحش خلص وإن اللي جاي يعوّضني عن كل الأيام اللي عدّت تقيلة على قلبي نفسي أضحك من قلبي من غير ما أبقى خايفة من اللي جاي وأحس بالأمان من غير ما أفضل مستنية حاجة توجعني وأعيش أيام بسيطة وحلوة مفيهاش كل التعب ده
+
+      <br>بس وسط كل ده فيه حاجة واحدة مكنتش بعرف أتعامل معاها بسهولة وهي غيابك عن حياتي
+
+      يمكن الناس تشوف إن ست شهور وقت كفاية إن الواحد يتعود على غياب حد بس محدش يعرف إن فيه ناس مش بنعرف نتعود على غيابها بسهولة مهما حاولنا نشغل نفسنا أو نبان إننا اتجاوزنا وإنت بالنسبالي من الناس دي
+
+      أنا لسه بحبك يا أحمد ويمكن دي من أكتر الحاجات اللي مش بعرف أشرحها إزاي ممكن أفضل شايلة كل الحب ده جوايا رغم كل اللي حصل ورغم المسافة والغياب وكل الأيام اللي عدّت من غير ما نكون جزء من تفاصيل بعض زي زمان
+      <br>
+      <br>بحبك بطريقة مش مرتبطة بإننا بنتكلم كل يوم ولا بإن كل حاجة بينا كويسة ولا حتى بإنك موجود قدامي بحبك لأنك إنت لأنك الشخص اللي عشت معاه حاجات كتير واللي تفاصيله بقت جزء من تفاصيل يومي واللي ليه مكان جوايا اتبنى على مواقف وذكريات ومشاعر مش سهلة تتنسي
+
+      أنا متعلقة بيك يا أحمد ومش هكدب وأقول إني بقيت عادية من غيرك أو إن غيابك مبقاش بيفرق معايا فيه حاجات كتير بتحصل وبلاقي نفسي تلقائيًا بفكر لو كنت معايا كان هيبقى إحساسها إيه أو لو كنت بحكيلك دلوقتي كنت هترد تقول إيه ساعات بشوف حاجة بسيطة تفكرني بيك فألاقي نفسي رجعت للحظة من اللحظات اللي عشناها وكأن قلبي لسه فاكر تفاصيل أنا نفسي بحاول أعدّيها
+      <br>
+
+      <br>وحشني وجودك في حياتي وحشني إحساس إني عندي حد أرجعله وحشني إني أحكيلك عن يومي وعن الحاجات الصغيرة اللي يمكن متفرقش مع أي حد بس كانت بتفرق معايا لما أشاركها معاك وحشني إحساس إن فيه حد عارفني عارف طريقتي وعارف إمتى أكون كويسة بجد وإمتى أكون بقول إني كويسة وخلاص
+      <br>
+
+      ويمكن أكتر حاجة بتوجعني إني مش عارفة إنت شايفني إزاي دلوقتي ولا أنا لسه ليّا مكان عندك ولا لأ ولا الذكريات اللي أنا لسه بحتفظ بيها جوايا ليها نفس المعنى عندك بس مهما كانت إجابة الأسئلة دي مش هقدر أنكر إنك بالنسبالي مكنتش شخص عادي وإن اللي حسيته ناحيتك مكنش حاجة بسيطة أقدر أعدّيها كأنها محصلتش
+      <br>
+
+      <br>أنا مش عارفة إيه اللي خلاني أتعلق بيك بالشكل ده يمكن عشان حبيتك بجد لقيت حد حنين من جواه هيكون اب واخ و وزج وصاحب ويمكن عشان مع الوقت بقيت أشوفك في حاجات كتير من حياتي في خططي وفي أحلامي وفي تفاصيل كنت بتخيلها للمستقبل انا وانت من غير ما أحس إني بتخيل بقيت لما أفكر في بكرة ألاقي جزء مني تلقائيًا بيفكر فيك في شكل حياتنا وشقتنا و لو كنا كملنا وفي الحاجات اللي كان نفسي نعيشها سوا في حياتنا بعدين....
+      <br>
+
+      أنا كان نفسي نعدّي الصعب سوا مش كل واحد فينا يبقى بعيد عن التاني عارفه ان كل واحد فينا فجاه اتحط ف ظرف او ظروف وحشه انا مقدره كل دا بس فكره ان كل واحد فينا بيحاول يتعامل مع وجعه لوحده كان نفسي لما الدنيا تتقل علينا نعرف نرجع لبعض اكون معاك لما تكون مضايق انزل اشوفك وامسك ايدك او حتي نتخانق كل دا كان بيهون علينا واحنا مش فاهمين ونفتكر إننا في يوم اخترنا بعض وإن فيه بينا حكاية تستاهل نحاول نفهمها ونحافظ عليها بس عارف رغم كل دا مبسوطه اني فهمت جزء كبير مني فهمت تعلقي وحبي ليك انا كان صعب او مستحيل اني احس بمشاعر زي دي بس اتفاجئت اني ماليش حياه غير معاك حتي لو هنتعب شويه لحد ما نوصل لشكل الحياه اللي حبينها سوا بس انا متاكده ان كل اللي جاي خير وهدوء <br>
+
+      <br>ومش معنى كلامي ده إني نسيت أي حاجة وجعتني ولا إني بقول إن الحب لوحده كفاية عشان كل حاجة تتصلح أنا عارفة إن أي علاقة محتاجة حاجات كتير غير الحب محتاجة أمان واهتمام ووضوح ومحاولة من الطرفين بس برضه الحب بالنسبالي مش حاجة سهلة أقدر أتعامل معاها كأنها انتهت لمجرد إن الظروف اتغيرت
+
+      أنا بحبك بكل الذكريات اللي بينا بكل التفاصيل اللي محدش يعرف معناها غيرنا بكل المواقف اللي ضحكنا فيها وبكل اللحظات اللي كنت فيها أقرب حد لقلبي وبحب حتى الحاجات الصغيرة اللي يمكن إنت نسيتها بس أنا لسه فاكراها لأنها بالنسبالي كانت جزء من حكايتنا
+      <br>
+      <br>ويمكن عشان كده لسه بحاول أحتفظ بالحاجات الحلوة اللي بينا مش عشان أعيش في الماضي لكن عشان اللي عشناه كان حقيقي بالنسبالي وكان ليه قيمة كبيرة في قلبي ومش حابة أتعامل معاه كأنه كان مجرد وقت وعدّى
+      <br>
+
+      أنا مش عايزة أكون مجرد ذكرى عندك ولا عايزة أكون الشخص اللي كل ما تفتكره تحس إن بينا وجع وبس لو لينا فرصة تانية نعرف نعيش حاجة أهدى وأنضج وأحلى نعرف فيها نسمع بعض أكتر ونفهم بعض من غير ما كل واحد فينا يضطر يخبي وجعه أو يستنى التاني يفهم لوحده منكررش اي غلط وقعنا فيه مندخلش حد بينا اي حد نفتكر اي شعور وحش حسينا بيه واحنا بعيد عن بعض
+      <br>
+      <br>نفسي يكون لينا أيام جديدة نعمل فيها ذكريات أحلى من القديمة ونضحك على حاجات تافهة ونختلف ونرجع نتفاهم ونعيش تفاصيل عادية جدًا بس تبقى حلوة عشان إحنا عايشينها سوا نفسي الحاجات اللي كنت بتخيلها معاك متفضلش مجرد خيالات في دماغي ونفسي لو ربنا كاتب لنا نكمل نعرف المرة دي نحافظ على بعض بشكل أحسن واهدي
+
+      أنا مش عارفة الأيام مخبيالنا إيه ولا إذا كان لسه لينا نصيب في حكاية نكمّلها سوا ولا لأ ومش هقدر أقول إني عارفة النهاية بس اللي أعرفه إني لسه بحبك ولسه بتمني نختار شقتنا وعزالنا ولسه شايفه انك هتكون احن واحلي بابي ل قدر ولسه بتمنى ليك الخير من قلبي ولسه فيه جزء جوايا بيتمنى إنك تكون بخير وإن الأيام تكون أحنّ عليك وإنك متبقاش شايل وجع أكتر من اللي تقدر عليه
+      <br>
+      <br> بجد نفسي يا أحمد يكون كل الوحش خلص ليا وليك وإن ربنا يعوضنا عن الأيام اللي تعبنا فيها وعن الحاجات اللي خسرناها وعن كل مرة حسينا فيها إننا لوحدنا نفسي أرتاح وأطمن وأحس إن الحياة مش لازم تفضل صعبة بالشكل ده وإن لسه فيه أيام ممكن تفرحنا بجد
+      ولو فيه حاجة نفسي أوصلهالك من كل الكلام ده فهي إنك لسه غالي عندي وإن حبي ليك مكنش في يوم مجرد كلام بيتقال في وقت حلو إنت كنت جزء من حياتي وبقيت حياتي و قلبي و أحلامي و مستقبلي وده شيء مش هقدر أنكرو مهما حصل
+      <br>
+      ومهما كانت الأيام الجاية شكلها إيه أتمنى من قلبي إننا نبقى بخير وإن الوجع اللي عشناه ميكونش هو آخر حاجة نفتكرها من بعض
+      <br>
+      <br>
+      ممكن الكلام كتير اوي بس مش عايزه اقولك ان لسه في تفاصيل اكتر انا فاكراها انا مشيت كذا مره في الشارع وانا منهاره علشان كنت حاسه ان خلاص انا واحمد مش هنرجع وان خلاص انا مش عارفه اقول لمين اني مش مستحمله غيابك انا كتبت الكلام دا كلو بكل حب وكل صدق وندم اكيد علي اي شئ صدر مني مكنش مقصود او مقصود وحابه اقول كمان معنديش مشكله افضل حياتي كلها اقولك بس اني بحبك وان نفسي كل حاجه تبقا احسن بينا علشان انا ماليش غيرك.
+      <br>
+      <br>
+
+      <br>And if there's one thing I hope you never doubt it's that you were truly loved
+      <br>
+      By me
+      <br>
+
+      Always ♡
+          </p>
+        <button type="button" class="s7-close-letter" onclick="toggleAhmedLetter(false)">أقفل الرسالة بهدوء</button>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<p>♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡
+♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡ ♡ ─────── ⋆｡˚ ☾ ˚｡⋆ ─────── ♡A♡ ─────── ⋆｡˚ ☾ ˚｡⋆</p>
+
+
+
+<!-- 8: REMEMBER US -->
+<!-- 8: REMEMBER US -->
+
+<section id="s8">
+  <div class="section-inner">
+
+    <div class="number">08 — REMEMBER US</div>
+
+    <h2>لو نسيت حبك ليا، ارجع هنا وافتكر لمعة عينك كل ما تشوفني ❤️</h2>
+
+    <div class="divider"></div>
+
+    <div class="card soft">
+      <p>
+        هتلاقي حبك لبطوط اللي عمره ما هيتغير جواك مهما بيّنت عكس ده،
+        لأن في حتة منك عمرها ما بطّلت تحبني. ❤️
+      </p>
+    </div>
+
+    <!-- الرسالة الخاصة بدل أرشيف الصور -->
+    <div class="drive-letter-wrap" id="driveLetterWrap">
+      <button class="drive-envelope" id="driveEnvelope" type="button"
+              onclick="showDrivePassword()" aria-expanded="false"
+              aria-controls="drivePasswordBox">
+        <span class="drive-envelope-flap"></span>
+        <span class="drive-envelope-heart">♡</span>
+        <span class="drive-envelope-label">رسالة صغيرة ليك</span>
+        <span class="drive-envelope-hint">اضغط على الظرف وافتحه ❤️</span>
+      </button>
+
+      <form class="drive-password-box" id="drivePasswordBox" hidden
+            onsubmit="return unlockDriveMessage(event)">
+        <h3>فيه حاجة مستنياك جوا الرسالة ❤️</h3>
+        <p>اكتب اسمي</p>
+        <input id="drivePasswordInput" type="password" placeholder="اكتب الباسورد..."
+               autocomplete="off" aria-label="كلمة المرور">
+        <button type="submit" class="drive-open-button">افتح الرسالة</button>
+        <p class="drive-password-error" id="drivePasswordError" role="alert"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<style>
+/* كل التنسيقات دي خاصة بالسكشن الثامن فقط */
+
+#s8 .dream-world {
+  --dream-accent: #bd858e;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 32px;
+  padding: 35px 22px;
+  border: 1px solid rgba(189, 133, 142, 0.28);
+  border-radius: 20px;
+  background: #101c35;
+  color: inherit;
+  transition: background 0.6s ease;
+}
+
+#s8 .dream-world.dream-active {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(112, 75, 145, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(145deg, #171022, #21142f 55%, #120e20);
+  border-color: rgba(189, 133, 142, 0.4);
+}
+
+#s8 .dream-stars {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+#s8 .dream-active .dream-stars {
+  opacity: 1;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.75) 0.7px, transparent 1px),
+    radial-gradient(circle, rgba(219,196,255,.65) 0.6px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,.45) 0.5px, transparent 1px);
+  background-size: 43px 47px, 61px 67px, 29px 37px;
+  background-position: 0 0, 17px 23px, 9px 11px;
+}
+
+#s8 .dream-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#s8 .dream-title {
+  margin: 0 0 18px;
+  font-size: clamp(28px, 4vw, 43px);
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+#s8 .dream-active .dream-title {
+  color: #f1e4ff;
+  text-shadow: 0 0 22px rgba(194, 155, 255, 0.15);
+}
+
+#s8 .dream-intro {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  line-height: 2;
+  opacity: 0.9;
+}
+
+#s8 .dream-number-area label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1.05em;
+}
+
+#s8 .dream-number-row,
+#s8 .dream-archive-tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+#s8 #memoryNumber,
+#s8 #archiveSearchNumber {
+  width: 190px;
+  max-width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(189, 133, 142, 0.55);
+  border-radius: 11px;
+  background: rgba(7, 13, 28, 0.24);
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#s8 .dream-active #memoryNumber,
+#s8 .dream-active #archiveSearchNumber {
+  background: rgba(8, 5, 18, 0.3);
+  border-color: rgba(202, 170, 240, 0.55);
+}
+
+#s8 #memoryNumber:focus,
+#s8 #archiveSearchNumber:focus {
+  border-color: var(--dream-accent);
+}
+
+#s8 .dream-btn,
+#s8 .dream-back-btn {
+  padding: 11px 17px;
+  border: 1px solid rgba(189, 133, 142, 0.65);
+  border-radius: 11px;
+  background: rgba(189, 133, 142, 0.06);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#s8 .dream-active .dream-btn,
+#s8 .dream-active .dream-back-btn {
+  border-color: rgba(202, 170, 240, 0.5);
+  background: rgba(183, 145, 229, 0.07);
+}
+
+#s8 .dream-btn:hover,
+#s8 .dream-back-btn:hover {
+  background: rgba(189, 133, 142, 0.17);
+  transform: translateY(-2px);
+}
+
+#s8 .dream-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#s8 .dream-side-action {
+  margin-top: 24px;
+}
+
+#s8 .dream-archive-btn {
+  min-width: 220px;
+}
+
+#s8 .dream-error {
+  margin-top: 12px;
+  color: #f1b4c2;
+}
+
+#s8 .dream-memory-view,
+#s8 .dream-archive {
+  margin-top: 30px;
+  animation: dreamReveal 0.4s ease;
+}
+
+#s8 .dream-memory-number {
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+#s8 .dream-image-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 700px);
+  height: min(72vh, 760px);
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(189, 133, 142, 0.23);
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+#s8 .dream-image-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+}
+
+#s8 .dream-archive-welcome[hidden] {
+  display: none !important;
+}
+
+#s8 .dream-arrow-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 1px solid rgba(189, 133, 142, 0.65);
+  border-radius: 50%;
+  background: rgba(189, 133, 142, 0.08);
+  color: inherit;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+#s8 .dream-arrow-btn:hover:not(:disabled) {
+  background: rgba(189, 133, 142, 0.2);
+  transform: translateY(-2px);
+}
+
+#s8 .dream-arrow-btn:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+#s8 .dream-placeholder {
+  line-height: 1.9;
+  opacity: 0.7;
+}
+
+#s8 .dream-caption {
+  margin: 17px auto;
+  max-width: 650px;
+  line-height: 2;
+  white-space: pre-wrap;
+}
+
+#s8 .dream-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+#s8 .dream-back-btn {
+  margin-top: 20px;
+}
+
+#s8 .dream-archive-title {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+#s8 .dream-archive-description {
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+#s8 .dream-archive-tools {
+  margin: 20px 0;
+}
+
+#s8 .dream-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 24px;
+}
+
+#s8 .dream-archive-item {
+  min-width: 0;
+  min-height: 58px;
+  padding: 10px 5px;
+  border: 1px solid rgba(189, 133, 142, 0.32);
+  border-radius: 10px;
+  background: rgba(189, 133, 142, 0.04);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#s8 .dream-active .dream-archive-item {
+  border-color: rgba(202, 170, 240, 0.27);
+}
+
+#s8 .dream-archive-item:hover {
+  background: rgba(189, 133, 142, 0.17);
+  border-color: var(--dream-accent);
+}
+
+#s8 .dream-archive-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+#s8 #archivePageLabel {
+  min-width: 60px;
+  opacity: 0.8;
+}
+
+#s8 [hidden] {
+  display: none !important;
+}
+
+@keyframes dreamReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 650px) {
+  #s8 .dream-world {
+    padding: 27px 13px;
+  }
+
+  #s8 .dream-number-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #s8 #memoryNumber {
+    width: 100%;
+  }
+
+  #s8 .dream-image-frame {
+    height: min(65vh, 620px);
+    min-height: 260px;
+  }
+
+  #s8 .dream-navigation {
+    flex-direction: row;
+  }
+
+  #s8 .dream-navigation .dream-arrow-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  #s8 .dream-archive-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+}
+
+
+/* ظرف الرسالة الجديدة داخل سكشن 08 */
+#s8 .drive-letter-wrap {
+  width: min(100%, 560px);
+  margin: 34px auto 18px;
+  text-align: center;
+}
+
+#s8 .drive-envelope {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: min(100%, 390px);
+  min-height: 205px;
+  margin: auto;
+  padding: 42px 24px 28px;
+  overflow: hidden;
+  color: #f5edf0;
+  background: linear-gradient(145deg, #17283b, #263c53);
+  border: 1px solid rgba(189, 133, 142, .48);
+  border-radius: 12px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .22);
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+#s8 .drive-envelope:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, .28);
+}
+
+#s8 .drive-envelope-flap {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(245, 237, 240, .16);
+  background: rgba(189, 133, 142, .22);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+#s8 .drive-envelope-heart {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  color: #f1c5ce;
+  background: #30475f;
+  border: 1px solid rgba(241, 197, 206, .5);
+  border-radius: 50%;
+  font-size: 32px;
+}
+
+#s8 .drive-envelope-label {
+  z-index: 1;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+#s8 .drive-envelope-hint {
+  z-index: 1;
+  color: #d7c5cb;
+  font-size: 13px;
+}
+
+#s8 .drive-password-box {
+  width: min(100%, 390px);
+  margin: 22px auto 0;
+  padding: 24px 20px;
+  background: rgba(20, 37, 55, .78);
+  border: 1px solid rgba(189, 133, 142, .35);
+  border-radius: 12px;
+}
+
+#s8 .drive-password-box h3 {
+  margin: 0 0 9px;
+  color: #f4e8ec;
+  font-size: 19px;
+}
+
+#s8 .drive-password-box p {
+  margin: 7px 0 14px;
+  color: #d9c6cd;
+}
+
+#s8 .drive-password-box input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 14px;
+  color: #f8f2f4;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(215, 197, 203, .35);
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  font: inherit;
+}
+
+#s8 .drive-open-button {
+  width: 100%;
+  margin-top: 13px;
+  padding: 12px 16px;
+  color: #17283b;
+  background: #e5c4cd;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#s8 .drive-password-error {
+  min-height: 20px;
+  margin-bottom: 0 !important;
+  color: #ffb8c3 !important;
+  font-size: 13px;
+}
+
+#s8 .drive-password-box[hidden] {
+  display: none !important;
+}
+</style>
+
+
+<script>
+function toggleAhmedLetter(forceOpen) {
+  const letter = document.getElementById("s7LetterContent");
+  const trigger = document.getElementById("s7EnvelopeTrigger");
+  const isOpening = typeof forceOpen === "boolean" ? forceOpen : letter.hidden;
+  letter.hidden = !isOpening;
+  trigger.setAttribute("aria-expanded", String(isOpening));
+  trigger.querySelector(".s7-trigger-title").textContent =
+    isOpening ? "رسالتك مفتوحة" : "رسالة هادية من قلبي";
+  trigger.querySelector(".s7-trigger-hint").textContent =
+    isOpening ? "خد وقتك واقرا براحتك" : "افتحها وقت ما تكون مستعد تقراها";
+}
+
+function toggleS2Message(forceOpen) {
+  const message = document.getElementById("s2HiddenMessage");
+  const trigger = document.getElementById("s2ScrollTrigger");
+  const isOpening = typeof forceOpen === "boolean" ? forceOpen : message.hidden;
+  message.hidden = !isOpening;
+  trigger.setAttribute("aria-expanded", String(isOpening));
+  trigger.querySelector(".s2-scroll-title").textContent =
+    isOpening ? "رسالتنا المفتوحة" : "رسالة مربوطة بحكايتنا";
+  trigger.querySelector(".s2-scroll-hint").textContent =
+    isOpening ? "اضغط هنا علشان تلفّ الرسالة تاني" : "اضغط على الفيونكة علشان تفتح الرسالة";
+}
+
+/* رسالة Google Drive الخاصة بسكشن 08 */
+const DRIVE_LINK = "https://drive.google.com/drive/folders/1lHKkXHgt82TFGrEQgePL0FQsbAJnojRI?usp=sharing";
+
+function showDrivePassword() {
+  const envelope = document.getElementById("driveEnvelope");
+  const passwordBox = document.getElementById("drivePasswordBox");
+  if (!envelope || !passwordBox) return;
+
+  passwordBox.hidden = false;
+  envelope.setAttribute("aria-expanded", "true");
+  envelope.querySelector(".drive-envelope-label").textContent = "الظرف اتفتح ❤️";
+  envelope.querySelector(".drive-envelope-hint").textContent = "اكتب الباسورد علشان تكمل";
+  document.getElementById("drivePasswordInput").focus();
+}
+
+function unlockDriveMessage(event) {
+  event.preventDefault();
+
+  const input = document.getElementById("drivePasswordInput");
+  const error = document.getElementById("drivePasswordError");
+  if (!input || !error) return false;
+
+  if (input.value.trim() === "بطوط") {
+    error.textContent = "";
+    window.location.href = DRIVE_LINK;
+  } else {
+    error.textContent = "مش ده الاسم اللي بدلعك بيه ❤️";
+    input.focus();
+  }
+
+  return false;
+}
+</script>
+
+<p>♡⋆｡˚ ☾ ˚｡⋆ ♡⋆｡˚ ☾♡⋆｡˚ ☾ ˚｡⋆ ♡⋆｡˚ ☾ ˚｡⋆ ♡⋆｡˚ ☾ ˚｡⋆ ♡ ───── ⋆｡˚ ☾ ˚｡⋆ ─── 𝒜𝒽𝓂𝑜𝓊𝒹 𝓝𝓷 𝓔𝔂𝓸𝓸𝓷 𝓑𝓪𝓽𝓸𝓸𝓽 ♡ ── ♡⋆｡˚ ☾♡⋆｡˚⋆｡˚ ☾ ˚｡⋆ ⋆｡˚ ☾ ˚｡⋆ ── ♡ ♡⋆｡˚ ☾ ˚｡⋆  ♡⋆｡˚ ☾ ˚｡⋆ </p>
+
+
+<section id="s8-intro">
+  <div class="section-inner">
+    <div class="number">08 — REMEMBER US</div>
+    <h2>لو نسيت حبك ليا ارجع هنا وافتكر لمعة عينك كل ما تشوفني ❤️</h2>
+    <div class="divider"></div>
+
+    <div class="card soft">
+      <p>
+        هتلاقي حبك لبطوط اللي عمره ما هيتغير جواك مهما بيّنت عكس ده
+        لأن في حتة منك عمرها ما بطّلت تحبني. ❤️
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 9: A SECRET LETTER -->
+
+<!-- ==========================================
+     SECTION 09 — A SECRET LETTER
+========================================== -->
+<!-- عالم البحر والذكريات — يأتي بعد أرشيف الصور الـ905 وكل أدواته -->
+<section id="memorySeaWorld" class="memory-sea-section">
+  <div class="section-inner">
+    <div class="number">A QUIET PLACE — ONLY WE KNOW</div>
+    <h2>مكان صغير من عالمنا</h2>
+    <div class="divider"></div>
+    <p class="sea-world-intro">هنا مفيش حاجة مستعجلة… بس لحظات حبيت أسيبهالك.</p>
+
+    <div class="sea-world" id="seaWorld">
+      <div class="sea-sky" aria-hidden="true"></div>
+      <div class="sea-moon" aria-hidden="true"></div>
+      <div class="sea-horizon" aria-hidden="true"></div>
+      <div class="sea-water" aria-hidden="true"></div>
+      <div class="sea-reflection" aria-hidden="true"></div>
+      <div class="sea-mist sea-mist-one" aria-hidden="true"></div>
+      <div class="sea-mist sea-mist-two" aria-hidden="true"></div>
+      <div class="sea-stars" aria-hidden="true"></div>
+
+      <div class="sea-entry" id="seaEntry">
+        <button class="sea-envelope-trigger" type="button"
+                aria-label="افتح ظرف الذكريات" onclick="showSeaPassword()">
+          <span class="sea-envelope-icon" aria-hidden="true">✉</span>
+        </button>
+        <p class="sea-entry-label">فيه لحظات مستنياك هنا</p>
+        <span class="sea-entry-hint">اضغط على الظرف</span>
+      </div>
+
+      <div class="sea-password-gate" id="seaPasswordGate" hidden>
+        <div class="sea-envelope-icon" aria-hidden="true">♡</div>
+        <h3>
+ولو في يوم المسافات كبرت، أو الأيام خدتنا في سكك بعيدة.. أوعى تنسى ملامحي يا أحمد، أنا نفسي أفضل عايشة في ذاكرتك بنفس اللمعة اللي كانت في عينك وأنت بتبصلي....        </h3>
+
+        <form onsubmit="event.preventDefault(); unlockSeaMemories();">
+          <input class="sea-password-input" id="seaPasswordInput"
+                 type="password" placeholder="اكتب الباسورد"
+                 autocomplete="off" aria-label="باسورد الذكريات">
+          <p class="sea-password-hint"> اكتب اسمي</p>
+          <button class="sea-password-button" type="submit">افتح الذكريات</button>
+        </form>
+        <p class="sea-password-error" id="seaPasswordError" aria-live="polite"></p>
+      </div>
+
+      <div class="sea-memory-world" id="seaMemoryWorld" hidden>
+        <p class="sea-memory-line">
+        </p>
+        <p class="sea-secret-line">
+          يمكن الجزء ده معمول لوقت… أتمنى ميوصلش.
+          <span class="sea-hidden-confession">إن الزمن ياخدنا من بعض… وتنسى ملامحي.</span>
+        </p>
+
+        <h3 class="sea-gallery-heading">
+       ♡
+        </h3>
+        <div class="sea-photo-grid" id="seaPhotoField">
+          <!-- غيّري مسارات الصور من هنا -->
+          <button class="sea-photo-card" type="button"
+                  data-photo="photo.jpg/A%20(2).jpeg">
+            <img src="photo.jpg/A%20(2).jpeg" alt="ذكرى أولى لنا" loading="lazy">
+            <span>
+            </span>
+          </button>
+          <button class="sea-photo-card" type="button"
+                  data-photo="photo.jpg/A%20(3).jpeg">
+            <img src="photo.jpg/A%20(3).jpeg" alt="ذكرى ثانية لنا" loading="lazy">
+            <span>
+            </span>
+          </button>
+          <button class="sea-photo-card" type="button"
+                  data-photo="photo.jpg/A%20(1).jpeg">
+            <img src="photo.jpg/A%20(1).jpeg" alt="ذكرى ثالثة لنا" loading="lazy">
+            <span>
+            </span>
+          </button>
+
+
+          <button class="sea-photo-card" type="button"
+                  data-photo="photo.jpg/WhatsApp Image 2026-11-03 at 1.06.29 PM.jpeg">
+            <img src="photo.jpg/WhatsApp Image 2026-11-03 at 1.06.29 PM.jpeg" alt="ذكرى ثالثة لنا" loading="lazy">
+            <span>
+            </span>
+          </button>
+        </div>
+
+        <h3 class="sea-gallery-heading">
+مش هكتب كابشن لكل صورة، علشان أنا عاملة السكشن ده عشان تفضل ملامحي قدامك، وتفتكرني حتى في الأيام اللي مش هكون فيها جنبك.. عايزاك تفتكر وشي، ضحكتي، عيني، وكل تفصيلة صغيرة فيّا.. علشان مهما حصل، متنساش شكلي      ♡
+</h3>
+        <div class="sea-video-field sea-video-grid" id="seaVideoField">
+          <!-- غيّري مسارات الفيديوهات من هنا -->
+          <button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA (1).mp4" aria-label="تشغيل الفيديو الأول">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA (1).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA (2).mp4" aria-label="تشغيل الفيديو الثاني">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA (2).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA (3).mp4" aria-label="تشغيل الفيديو الثالث">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA (3).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA (4).mp4" aria-label="تشغيل الفيديو الرابع">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA (4).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA (5).mp4" aria-label="تشغيل الفيديو الخامس">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA (5).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA (6).mp4" aria-label="تشغيل الفيديو السادس">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA (6).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA (7).mp4" aria-label="تشغيل الفيديو السابع">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA (7).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA(8).mp4" aria-label="تشغيل الفيديو الثامن">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA(8).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA(9).mp4" aria-label="تشغيل الفيديو التاسع">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA(9).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA(10).mp4" aria-label="تشغيل الفيديو العاشر">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA(10).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA(11).mp4" aria-label="تشغيل الفيديو الحادي عشر">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA(11).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA(12).mp4" aria-label="تشغيل الفيديو الثاني عشر">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA(12).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/ASMA(13).mp4" aria-label="تشغيل الفيديو الثالث عشر">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/ASMA(13).mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+
+<button class="sea-video-card" type="button"
+        data-video="photo.jpg/WhatsApp Video 2026-11-03 at 12.30.38 PM.mp4" aria-label="تشغيل الفيديو الثالث عشر">
+  <video class="sea-video-thumb" muted playsinline preload="metadata">
+    <source src="photo.jpg/WhatsApp Video 2026-11-03 at 12.30.38 PM.mp4" type="video/mp4">
+  </video>
+  <span class="sea-video-caption">
+  </span>
+</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sea-photo-viewer" id="seaPhotoViewer" hidden role="dialog" aria-modal="true" aria-label="عرض صورة من الذكريات">
+  <button class="sea-photo-close" id="seaPhotoClose" type="button" aria-label="إغلاق الصورة">×</button>
+  <img id="seaExpandedPhoto" src="" alt="صورة من ذكرياتنا">
+</div>
+
+<div class="sea-video-modal" id="seaVideoModal" hidden role="dialog" aria-modal="true" aria-label="مشاهدة فيديو من الذكريات">
+  <button class="sea-video-close" id="seaVideoClose" type="button" aria-label="إغلاق الفيديو">×</button>
+  <video id="seaExpandedVideo" controls playsinline preload="metadata"></video>
+</div>
+
+
+<p>♡⋆｡˚ ☾ ˚｡⋆ ♡⋆｡˚ ☾♡⋆｡˚ ☾ ˚｡⋆ ♡⋆｡˚ ☾ ˚｡⋆ ♡⋆｡˚ ☾ ˚｡⋆ ♡ ───── ⋆｡˚ ☾ ˚｡⋆ ─── 𝐼 𝐿𝑜𝓋𝑒 𝒴𝑜𝓊 𝒜𝒽𝓂𝑜𝓊𝒹y ♡⋆｡˚ ☾ ˚｡⋆  ♡ ♡⋆｡˚ ☾ ˚⋆｡˚ ☾⋆｡˚ ☾ ˚｡⋆ ⋆｡˚ ☾ ˚｡⋆ ── ♡ ♡⋆｡˚ ☾ ˚｡⋆  ♡⋆｡˚ ☾ ˚｡⋆ </p>
+
+
+<section id="s9">
+
+  <div class="s9-stars"></div>
+  <div class="s9-mist"></div>
+  <div class="s9-flash" id="s9Flash"></div>
+
+  <div class="s9-container">
+
+    <!-- SCREEN 1: WELCOME -->
+
+    <div class="s9-screen active" id="s9Welcome">
+
+      <div class="s9-top-label">09 — A SECRET LETTER</div>
+
+      <h2 class="s9-heading">قبل ما نبدأ عمرنا الجاي</h2>
+
+      <p class="s9-intro-text">
+        مش كل الأبواب بتتفتح بالمفاتيح...
+        <br>
+        بعضها مستني حد يعرف يوصل له.
+      </p>
+
+      <button class="s9-flying-envelope" id="s9FlyingEnvelope" type="button">
+        <div class="s9-fly-glow"></div>
+
+        <div class="s9-fly-paper">
+          <span>ONLY WE KNOW</span>
+          <b>♡</b>
+        </div>
+
+        <div class="s9-fly-body">
+          <div class="s9-fly-flap"></div>
+          <div class="s9-fly-front"></div>
+          <div class="s9-fly-seal">♡</div>
+        </div>
+      </button>
+
+      <p class="s9-click-hint" id="s9FlyHint">اضغط على الظرف...</p>
+
+      <p class="s9-bottom-note">SOME THINGS ARE MEANT TO BE FOUND.</p>
+
+    </div>
+
+
+    <!-- SCREEN 2: FIRST PASSWORD -->
+
+    <div class="s9-screen" id="s9FirstPassword">
+
+      <div class="s9-step-label">THE FIRST GATE</div>
+
+      <div class="s9-lock-icon">⌑</div>
+
+      <h2 class="s9-heading">أول باب</h2>
+
+      <p class="s9-intro-text">
+        قبل ما تعرف إيه اللي مستنيك...
+        <br>
+        كلمه بتناديني بيها لو مش واخده بالي منك
+      </p>
+
+      <div class="s9-card">
+
+        <div class="s9-card-symbol">♡</div>
+
+        <p class="s9-question">Guess the password.</p>
+
+        <input
+          id="s9PasswordOne"
+          class="s9-input"
+          type="password"
+          placeholder="بتنادي عليّا بإيه لما مكونش واخدة بالي؟"
+          autocomplete="off"
+        >
+
+        <p class="s9-error" id="s9PasswordOneError"></p>
+
+        <button class="s9-button" id="s9PasswordOneButton" type="button">
+          افتح الباب
+        </button>
+
+      </div>
+
+      <p class="s9-bottom-note">ONLY YOU KNOW WHY.</p>
+
+    </div>
+
+
+    <!-- SCREEN 3: DATE PUZZLES -->
+
+    <div class="s9-screen" id="s9DateGame">
+
+      <div class="s9-step-label">THE MEMORY CODE</div>
+
+      <div class="s9-progress">
+        <span id="s9DateRoundLabel">CODE 01 / 03</span>
+        <span id="s9DateScoreLabel">SOLVED: 0</span>
+      </div>
+
+      <h2 class="s9-heading">كل رقم وراه حكاية</h2>
+
+      <p class="s9-intro-text">
+        الأرقام اتلخبطت...
+        <br>
+        اضغط على الأرقام بالترتيب الصح قبل ما الوقت يخلص.
+        <br>
+        والنقط هتتحط لوحدها ❤️
+      </p>
+
+      <div class="s9-timer">
+
+        <svg viewBox="0 0 100 100">
+          <circle class="s9-timer-track" cx="50" cy="50" r="43"></circle>
+
+          <circle
+            class="s9-timer-line"
+            id="s9TimerLine"
+            cx="50"
+            cy="50"
+            r="43"
+          ></circle>
+        </svg>
+
+        <div class="s9-timer-text">
+          <span id="s9TimerNumber">60</span>
+          <small>SECONDS</small>
+        </div>
+
+      </div>
+
+      <div class="s9-scramble-card">
+
+        <div class="s9-mini-label">TAP THE NUMBERS IN ORDER</div>
+
+        <div class="s9-scrambled-numbers" id="s9ScrambledNumbers"></div>
+
+        <p class="s9-selected-label">YOUR DATE</p>
+
+        <div class="s9-date-display" id="s9DateDisplay">_ _ . _ _ . _ _ _ _</div>
+
+        <button
+          class="s9-small-button"
+          id="s9UndoDigit"
+          type="button"
+        >
+          امسح آخر رقم
+        </button>
+
+        <button
+          class="s9-small-button"
+          id="s9ResetDigits"
+          type="button"
+        >
+          ابدأ من جديد
+        </button>
+
+      </div>
+
+      <div class="s9-date-form">
+
+        <div class="s9-time-hint" id="s9FixedTime">
+          الوقت: 12:21 AM
+        </div>
+
+        <p class="s9-error" id="s9DateError"></p>
+
+        <button class="s9-button" id="s9DateSubmit" type="button">
+          فك الشفرة
+        </button>
+
+      </div>
+
+      <p class="s9-status" id="s9DateStatus"></p>
+
+    </div>
+
+
+    <!-- SCREEN 4: QUESTIONS ABOUT THE DATES -->
+
+    <div class="s9-screen" id="s9Questions">
+
+      <div class="s9-step-label">DO YOU REMEMBER?</div>
+
+      <div class="s9-question-progress">
+        <span id="s9QuestionNumber">QUESTION 01 / 03</span>
+        <span id="s9QuestionScore">CORRECT: 0</span>
+      </div>
+
+      <h2 class="s9-heading">التواريخ مش كفاية...</h2>
+
+      <p class="s9-intro-text">
+        خلينا نشوف فاكر الحكاية نفسها ولا فاكر أرقامها بس.
+      </p>
+
+      <div class="s9-card s9-quiz-card">
+
+        <div class="s9-card-symbol">✦</div>
+
+        <p class="s9-quiz-question" id="s9QuizQuestion"></p>
+
+        <div class="s9-quiz-date" id="s9QuizDate"></div>
+
+        <div class="s9-quiz-text-answer">
+
+          <input
+            class="s9-input"
+            id="s9QuizTextInput"
+            type="text"
+            placeholder="اكتب إجابتك يا روحي..."
+            autocomplete="off"
+          >
+
+          <button
+            class="s9-button"
+            id="s9QuizTextSubmit"
+            type="button"
+          >
+            إجابتي ♡
+          </button>
+
+        </div>
+
+        <p class="s9-error" id="s9QuizError"></p>
+
+        <p class="s9-status" id="s9QuizStatus"></p>
+
+      </div>
+
+    </div>
+
+
+    <!-- SCREEN 5: FINAL PASSWORD -->
+
+    <div class="s9-screen" id="s9FinalPassword">
+
+      <div class="s9-step-label">THE LAST GATE</div>
+
+      <div class="s9-lock-icon s9-final-lock">♡</div>
+
+      <h2 class="s9-heading">فاضل باب واحد...</h2>
+
+      <p class="s9-intro-text">
+        وصلت لحد هنا، بس لسه فيه كلمة أخيرة...
+        <br>
+        حاجة تخص حكايتنا إحنا.
+      </p>
+
+      <div class="s9-card">
+
+        <div class="s9-card-symbol">∞</div>
+
+        <p class="s9-question">One last password.</p>
+
+        <input
+          id="s9PasswordTwo"
+          class="s9-input"
+          type="password"
+          placeholder="Our little dream..."
+          autocomplete="off"
+        >
+
+        <p class="s9-error" id="s9PasswordTwoError"></p>
+
+        <button class="s9-button" id="s9PasswordTwoButton" type="button">
+          آخر محاولة
+        </button>
+
+      </div>
+
+      <p class="s9-bottom-note">SOMEWHERE BETWEEN A DREAM AND FOREVER.</p>
+
+    </div>
+
+
+    <!-- SCREEN 6: SUCCESS -->
+
+    <div class="s9-screen" id="s9Success">
+
+      <div class="s9-success-symbol">✦</div>
+
+      <p class="s9-step-label">ACCESS GRANTED</p>
+
+      <h2 class="s9-heading">The game is getting hotter...</h2>
+
+      <p class="s9-intro-text">
+        عرفت توصل لحد هنا...
+        <br>
+        يبقى تستاهل تعرف إيه اللي مستخبي ورا الباب.
+      </p>
+
+      <button class="s9-button" id="s9RevealEnvelope" type="button">
+        كمّل الحكاية ♡
+      </button>
+
+    </div>
+
+
+    <!-- SCREEN 7: SECOND ENVELOPE -->
+
+    <div class="s9-screen" id="s9FinalEnvelope">
+
+      <div class="s9-step-label">JUST FOR YOU</div>
+
+      <h2 class="s9-heading">وصلت للرسالة...</h2>
+
+      <p class="s9-intro-text">
+        بس آخر حاجة...
+        <br>
+        افتحها بنفسك.
+      </p>
+
+      <button
+        class="s9-flying-envelope s9-final-flying-envelope"
+        id="s9SecondFlyingEnvelope"
+        type="button"
+        aria-label="افتح الرسالة"
+      >
+
+        <div class="s9-fly-glow"></div>
+
+        <div class="s9-fly-paper">
+          <span>ONLY WE KNOW</span>
+          <b>♡</b>
+        </div>
+
+        <div class="s9-fly-body">
+          <div class="s9-fly-flap"></div>
+          <div class="s9-fly-front"></div>
+          <div class="s9-fly-seal">♡</div>
+        </div>
+
+      </button>
+
+      <p class="s9-click-hint">اضغط عشان تعرف اللي مستنيك...</p>
+
+    </div>
+
+    <!-- SCREEN 8: SECRET LETTER -->
+
+    <div class="s9-screen" id="s9Letter">
+
+      <div class="s9-letter-top">
+        <span>ONLY WE KNOW ♡</span>
+        <span>09 — A SECRET LETTER</span>
+      </div>
+
+      <div class="s9-letter-paper">
+
+        <div class="s9-letter-decoration">✦</div>
+
+        <p class="s9-letter-greeting">
+          إلى الشخص اللي هيوصل للرسالة دي في الوقت المناسب...
+        </p>
+
+        <h2 class="s9-letter-name">
+          إلى زوجي العزيز،
+          <br>
+          نور عيني، ورفيق دربي، وروحي...
+        </h2>
+
+        <div class="s9-letter-content">
+
+          <p>
+            لو إنت بتقرأ الكلام ده، فمعنى كده إنك وصلت لمكان
+            أنا سايباهولك من وقت طويل...
+            يمكن قبل ما تعرف إنه موجود أصلًا.
+          </p>
+
+          <p>
+            غريبة، مش كده؟ إنك تقرأ كلام اتكتب في وقت،
+            وإنت بتعيشه في وقت تاني، وإن فيه حاجات لسه محصلتش،
+            ومع ذلك أنا حبيت أسيبلك أثر منها من دلوقتي.
+          </p>
+
+          <p>بس خليني أسألك سؤال...</p>
+
+          <p>
+            عمرك فكرت إن ممكن يكون فيه يوم عادي جدًا بالنسبالك،
+            لكنه بالنسبالي هو اليوم اللي كنت بتخيل تفاصيله
+            وأنا لسه مش عارفة هييجي إمتى؟
+          </p>
+
+          <p>
+            يمكن تكون فيه حاجات كتير فاكر إنها لسه مجرد كلام بنحكيه،
+            وأحلام بنرسمها سوا، وحاجات بنقول «لما ييجي وقتها»
+            ونضحك...
+          </p>
+
+          <p>
+            بس يا أحمد، هو إنت متأكد إن كل الحكايات الحلوة
+            بتبدأ يوم ما بتحصل؟
+            ولا يمكن بتبدأ من اللحظة اللي حد فينا بيتمنّاها فيها بصدق؟
+          </p>
+
+          <p>
+            أنا مش هقولك إيه اللي مستنينا،
+            ولا هحكيلك عن كل حاجة نفسي أشوفها معاك.
+            مش دلوقتي على الأقل.
+          </p>
+
+          <p>
+            فيه حاجات لو عرفتها قبل وقتها، هتفقد جزء من سحرها...
+            وفيه مفاجآت مش المفروض تعرف إنها جاية،
+            عشان لما توصل، تبص حواليك وتكتشف إنك كنت بتقرب منها
+            طول الوقت من غير ما تعرف.
+          </p>
+
+          <p>وعشان كده، أنا سايبالك الرسالة دي.</p>
+
+          <p class="s9-letter-emphasis">
+            مش عشان أحكيلك عن المستقبل...
+            <br>
+            لكن عشان لما ييجي يوم وتكتشفه،
+            تفتكر إن فيه قلب كان بيحلم بيه معاك قبل ما يبقى حقيقة.
+          </p>
+
+          <p>وعندي طلب أخير منك...</p>
+
+          <p>
+            لما تخلص الرسالة، متحاولش تفهم كل حاجة دلوقتي.
+            فيه باب لسه متفتحش، وحكاية لسه متقالتش،
+            وتفصيلة صغيرة جدًا...
+            يمكن تكون هي الإجابة عن كل الأسئلة اللي في دماغك.
+          </p>
+
+          <p class="s9-letter-emphasis">دور عليها.</p>
+
+          <p>بس خليك فاكر حاجة واحدة يا أحمد...</p>
+
+          <p class="s9-letter-ending">
+            مش كل اللي مستخبي ورا الأبواب بيكون سر...
+            ساعات بيكون عمر كامل مستني اللحظة المناسبة عشان يبدأ.
+          </p>
+
+        </div>
+
+        <div class="s9-letter-signature">
+          من بطوط، إلى أحمد نور عنيها..
+          <br>
+          <span>في وقتٍ لم يأتِ بعد. ♡</span>
+        </div>
+
+      </div>
+
+      <div class="s9-letter-footer">
+        SOME STORIES ARE WRITTEN BEFORE THEY BEGIN.
+      </div>
+
+      <button class="s9-button" id="s9Finish" type="button">
+        ولنا في الحكاية بقية...
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+#s9 {
+  --s9-bg: #050a17;
+  --s9-light: #e7edfa;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 75px 20px;
+  background:
+    radial-gradient(ellipse at 50% 20%, #1b2b4b 0%, transparent 48%),
+    radial-gradient(ellipse at 10% 90%, #101d36 0%, transparent 45%),
+    var(--s9-bg);
+  color: var(--s9-light);
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+#s9 *,
+#s9 *::before,
+#s9 *::after {
+  box-sizing: border-box;
+}
+
+#s9 .s9-stars {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, #ffffffaa 50%, transparent 100%),
+    radial-gradient(2px 2px at 70% 12%, #ffffff88 50%, transparent 100%),
+    radial-gradient(1px 1px at 80% 70%, #ffffff99 50%, transparent 100%),
+    radial-gradient(1px 1px at 35% 65%, #ffffff77 50%, transparent 100%),
+    radial-gradient(2px 2px at 90% 40%, #ffffff88 50%, transparent 100%);
+  background-size: 330px 330px;
+  animation: s9StarsMove 20s linear infinite;
+}
+
+@keyframes s9StarsMove {
+  from { background-position: 0 0; }
+  to { background-position: 100px 170px; }
+}
+
+#s9 .s9-mist {
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 30% 40%, #4a62871b, transparent 40%),
+    radial-gradient(ellipse at 75% 65%, #405b8119, transparent 45%);
+  filter: blur(25px);
+  animation: s9MistMove 14s ease-in-out infinite alternate;
+}
+
+@keyframes s9MistMove {
+  from { transform: translate(-2%, -1%); }
+  to { transform: translate(3%, 2%); }
+}
+
+#s9 .s9-container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+#s9 .s9-screen {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+#s9 .s9-screen.active {
+  display: block;
+  animation: s9ScreenIn .7s ease both;
+}
+
+@keyframes s9ScreenIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#s9 .s9-top-label,
+#s9 .s9-step-label {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: #91a5c8;
+  margin-bottom: 28px;
+}
+
+#s9 .s9-heading {
+  margin: 0 0 20px;
+  font-size: clamp(27px, 5vw, 42px);
+  line-height: 1.6;
+  font-weight: 400;
+  color: #f0f4ff;
+}
+
+#s9 .s9-intro-text {
+  color: #a6b3cc;
+  font-size: 14px;
+  line-height: 2.1;
+  margin: 0 auto 35px;
+}
+
+#s9 .s9-bottom-note {
+  margin-top: 35px;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: #6f82a4;
+  line-height: 2;
+}
+
+#s9 .s9-click-hint {
+  color: #8c9db9;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  animation: s9HintPulse 2s ease-in-out infinite;
+}
+
+@keyframes s9HintPulse {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+
+/* ENVELOPE */
+
+#s9 .s9-flying-envelope {
+  position: relative;
+  display: block;
+  width: 230px;
+  height: 155px;
+  margin: 35px auto 0;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  filter: drop-shadow(0 15px 28px #00000055);
+  animation: s9EnvelopeFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes s9EnvelopeFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-17px) rotate(2deg); }
+}
+
+#s9 .s9-fly-glow {
+  position: absolute;
+  inset: -35px;
+  border-radius: 50%;
+  background: #7595c21a;
+  filter: blur(23px);
+}
+
+#s9 .s9-fly-body {
+  position: absolute;
+  inset: 0;
+}
+
+#s9 .s9-fly-paper {
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  left: 20px;
+  right: 20px;
+  height: 125px;
+  padding-top: 20px;
+  background: #ece6db;
+  color: #27354c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  box-shadow: 0 0 20px #00000020;
+  transition: transform .8s ease;
+}
+
+#s9 .s9-fly-paper b {
+  font-size: 28px;
+  font-weight: 400;
+  color: #7d3549;
+}
+
+#s9 .s9-fly-front {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border: 1px solid #60799d;
+  background: linear-gradient(145deg, #293e60, #101d36);
+  clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 100%, 0 100%);
+}
+
+#s9 .s9-fly-flap {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #344c70;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform .7s ease;
+}
+
+#s9 .s9-fly-seal {
+  position: absolute;
+  z-index: 4;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #c48d9b;
+  background: #762b40;
+  color: #f5e5e9;
+  font-size: 18px;
+}
+
+#s9 .s9-flying-envelope.opened .s9-fly-flap {
+  transform: rotateX(180deg);
+}
+
+#s9 .s9-flying-envelope.opened .s9-fly-paper {
+  transform: translateY(-75px);
+}
+
+#s9 .s9-flying-envelope.opened {
+  animation: none;
+}
+
+/* CARDS AND INPUTS */
+
+#s9 .s9-card {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 30px 25px;
+  background: linear-gradient(145deg, #101d35d9, #070d1bd9);
+  border: 1px solid #7084a333;
+  box-shadow: 0 20px 65px #00000025;
+  border-radius: 4px;
+}
+
+#s9 .s9-card-symbol {
+  color: #d5deef;
+  font-size: 31px;
+  margin-bottom: 15px;
+}
+
+#s9 .s9-question {
+  color: #e9effd;
+  font-size: 19px;
+  margin: 0 0 22px;
+  letter-spacing: 1px;
+}
+
+#s9 .s9-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 15px;
+  border: 1px solid #7185a15c;
+  border-radius: 4px;
+  background: #060c18;
+  color: #f4f6ff;
+  text-align: center;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  transition: border-color .25s, box-shadow .25s;
+}
+
+#s9 .s9-input:focus {
+  border-color: #9eb7e3;
+  box-shadow: 0 0 18px #7295d522;
+}
+
+#s9 .s9-input::placeholder {
+  color: #71819d;
+  opacity: .85;
+}
+
+#s9 .s9-button {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  min-height: 48px;
+  margin-top: 20px;
+  padding: 13px 20px;
+  border: 1px solid #8599ba66;
+  border-radius: 3px;
+  background: linear-gradient(120deg, #1a2b49, #0b1427);
+  color: #edf2ff;
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+#s9 .s9-button:hover:not(:disabled) {
+  border-color: #c3d2ed;
+  box-shadow: 0 0 25px #829fd82b;
+  transform: translateY(-2px);
+}
+
+#s9 .s9-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+#s9 .s9-error {
+  min-height: 22px;
+  margin: 12px 0 0;
+  color: #ff8495;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+#s9 .s9-lock-icon {
+  color: #c3d2ec;
+  font-size: 44px;
+  margin-bottom: 18px;
+  text-shadow: 0 0 25px #c3d2ec33;
+}
+
+#s9 .s9-final-lock {
+  color: #d9b2bd;
+}
+
+/* DATE PUZZLES */
+
+#s9 .s9-progress,
+#s9 .s9-question-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: #8fa4c8;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+#s9 .s9-timer {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 28px;
+}
+
+#s9 .s9-timer svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+#s9 .s9-timer-track {
+  fill: none;
+  stroke: #293953;
+  stroke-width: 3;
+}
+
+#s9 .s9-timer-line {
+  fill: none;
+  stroke: #a9bfe9;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 270.18;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .2s linear, stroke .25s;
+}
+
+#s9 .s9-timer-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#s9 .s9-timer-text span {
+  font-size: 35px;
+  font-weight: 300;
+  color: #f2f5ff;
+}
+
+#s9 .s9-timer-text small {
+  color: #8194b5;
+  font-size: 8px;
+  letter-spacing: 3px;
+}
+
+#s9 .s9-scramble-card {
+  max-width: 470px;
+  margin: 0 auto 25px;
+  padding: 24px 15px;
+  border: 1px solid #61789b35;
+  background: #0c1629b8;
+}
+
+#s9 .s9-mini-label {
+  font-size: 9px;
+  color: #8095b7;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+#s9 .s9-scrambled-numbers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  direction: ltr;
+}
+
+#s9 .s9-digit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 48px;
+  border: 1px solid #61789b66;
+  border-radius: 4px;
+  background: #1a2a46;
+  color: #f0f4ff;
+  font-family: monospace;
+  font-size: 23px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+#s9 .s9-digit:hover:not(:disabled) {
+  background: #30496f;
+  border-color: #c3d2ed;
+  transform: translateY(-3px);
+}
+
+#s9 .s9-digit:disabled {
+  opacity: .22;
+  cursor: default;
+  transform: none;
+}
+
+#s9 .s9-selected-label {
+  margin: 25px 0 10px;
+  color: #8194b5;
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+
+#s9 .s9-date-display {
+  min-height: 42px;
+  padding: 8px 5px;
+  color: #f0f4ff;
+  font-size: clamp(21px, 4vw, 29px);
+  letter-spacing: 3px;
+  font-family: monospace;
+  direction: ltr;
+}
+
+#s9 .s9-small-button {
+  margin: 12px 5px 0;
+  padding: 8px 12px;
+  border: 1px solid #61789b55;
+  background: #101d35;
+  color: #b9c8e0;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+#s9 .s9-small-button:hover {
+  border-color: #c3d2ed;
+  color: #fff;
+}
+
+#s9 .s9-date-form {
+  max-width: 410px;
+  margin: 0 auto;
+}
+
+#s9 .s9-time-hint {
+  display: none;
+  margin: 18px auto;
+  padding: 12px;
+  border: 1px solid #a66a7c66;
+  background: #3b1d2a55;
+  color: #e5b8c5;
+  font-family: monospace;
+  font-size: 18px;
+  letter-spacing: 2px;
+  direction: ltr;
+}
+
+#s9 .s9-time-hint.show {
+  display: block;
+}
+
+#s9 .s9-status {
+  min-height: 24px;
+  margin-top: 20px;
+  color: #a6b5cf;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* QUIZ */
+
+#s9 .s9-quiz-card {
+  max-width: 530px;
+}
+
+#s9 .s9-quiz-question {
+  font-size: 18px;
+  line-height: 2;
+  color: #edf2ff;
+  margin: 0 0 15px;
+}
+
+#s9 .s9-quiz-date {
+  color: #d9b2bd;
+  font-family: monospace;
+  font-size: 23px;
+  direction: ltr;
+  margin: 0 auto 20px;
+}
+
+#s9 .s9-quiz-text-answer {
+  margin-top: 15px;
+}
+
+/* COLOR FEEDBACK */
+
+#s9 .s9-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#s9 .s9-flash.correct {
+  background: #13a85c;
+  animation: s9GreenFlash .75s ease-out;
+}
+
+#s9 .s9-flash.wrong {
+  background: #d10e35;
+  animation: s9RedFlash .75s ease-out;
+}
+
+@keyframes s9GreenFlash {
+  0% { opacity: 0; }
+  18% { opacity: .55; }
+  38% { opacity: .08; }
+  55% { opacity: .35; }
+  100% { opacity: 0; }
+}
+
+@keyframes s9RedFlash {
+  0% { opacity: 0; }
+  18% { opacity: .65; }
+  38% { opacity: .08; }
+  55% { opacity: .4; }
+  100% { opacity: 0; }
+}
+
+#s9 .s9-shake {
+  animation: s9Shake .35s ease;
+}
+
+@keyframes s9Shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-3px); }
+}
+
+/* SUCCESS */
+
+#s9 .s9-success-symbol {
+  font-size: 52px;
+  color: #e0d6e4;
+  margin: 20px 0;
+  text-shadow: 0 0 30px #c0446133;
+  animation: s9SuccessGlow 2s ease-in-out infinite;
+}
+
+@keyframes s9SuccessGlow {
+  0%, 100% { text-shadow: 0 0 15px #c0446122; }
+  50% { text-shadow: 0 0 40px #df365655; }
+}
+
+/* LETTER */
+
+#s9 .s9-letter-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: #8fa2c3;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+#s9 .s9-letter-paper {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: clamp(25px, 5vw, 55px);
+  text-align: right;
+  color: #293348;
+  background:
+    radial-gradient(ellipse at top left, #ffffff99, transparent 45%),
+    #eee9df;
+  border: 1px solid #c5bdaf;
+  box-shadow: 0 25px 80px #0000004d;
+}
+
+#s9 .s9-letter-decoration {
+  color: #8b5b68;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#s9 .s9-letter-greeting {
+  color: #5e6372;
+  line-height: 2;
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+#s9 .s9-letter-name {
+  color: #26334a;
+  font-size: 25px;
+  line-height: 1.9;
+  font-weight: 500;
+  margin: 0 0 28px;
+}
+
+#s9 .s9-letter-content {
+  font-size: 15px;
+  line-height: 2.25;
+}
+
+#s9 .s9-letter-content p {
+  margin: 0 0 23px;
+}
+
+#s9 .s9-letter-emphasis {
+  color: #7a3347;
+  font-weight: 600;
+}
+
+#s9 .s9-letter-ending {
+  font-weight: 600;
+  color: #313d54;
+}
+
+#s9 .s9-letter-signature {
+  margin-top: 40px;
+  text-align: left;
+  color: #6c394b;
+  line-height: 2.1;
+  font-size: 15px;
+}
+
+#s9 .s9-letter-signature span {
+  font-size: 13px;
+}
+
+#s9 .s9-letter-footer {
+  color: #7184a4;
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-top: 30px;
+  line-height: 2;
+}
+
+#s9 #s9Finish {
+  margin-top: 35px;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+  #s9 {
+    padding: 60px 15px;
+  }
+
+  #s9 .s9-card {
+    padding: 25px 17px;
+  }
+
+  #s9 .s9-progress,
+  #s9 .s9-question-progress {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  #s9 .s9-digit {
+    width: 36px;
+    height: 43px;
+  }
+
+  #s9 .s9-letter-top {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  #s9 .s9-letter-paper {
+    padding: 25px 20px;
+  }
+
+  #s9 .s9-letter-content {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #s9 *,
+  #s9 *::before,
+  #s9 *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+
+
+<script>
+(function () {
+  "use strict";
+
+  const section = document.getElementById("s9");
+
+  if (!section || section.dataset.initialized === "true") return;
+
+  section.dataset.initialized = "true";
+
+  const $ = id => section.querySelector("#" + id);
+
+  let dateTimer = null;
+  let dateIndex = 0;
+  let datesSolved = 0;
+  let secondsLeft = 60;
+  let dateLocked = false;
+  let selectedDigits = [];
+
+  let quizIndex = 0;
+  let quizCorrect = 0;
+  let quizLocked = false;
+  let quizRetryTimer = null;
+
+  /* SCREEN NAVIGATION */
+
+  function showScreen(id) {
+    section.querySelectorAll(".s9-screen").forEach(screen => {
+      screen.classList.remove("active");
+    });
+
+    const target = $(id);
+    if (target) target.classList.add("active");
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+
+  /* GREEN / RED FEEDBACK */
+
+  function showFeedback(isCorrect) {
+    const flash = $("s9Flash");
+
+    flash.classList.remove("correct", "wrong");
+    void flash.offsetWidth;
+
+    flash.classList.add(isCorrect ? "correct" : "wrong");
+
+    const current = section.querySelector(".s9-screen.active");
+
+    if (current) {
+      current.classList.remove("s9-shake");
+      void current.offsetWidth;
+      current.classList.add("s9-shake");
+    }
+  }
+
+  /* TEXT NORMALIZATION */
+
+  function normalizeArabic(value) {
+    return value
+      .trim()
+      .toLowerCase()
+      .replace(/[أإآ]/g, "ا")
+      .replace(/ى/g, "ي")
+      .replace(/ة/g, "ه")
+      .replace(/[ًٌٍَُِّْـ]/g, "")
+      .replace(/\s+/g, " ");
+  }
+
+  /* SCREEN 1: ENVELOPE */
+
+  $("s9FlyingEnvelope").addEventListener("click", function () {
+    this.classList.add("opened");
+    $("s9FlyHint").textContent = "فيه حاجة مستنياك...";
+
+    setTimeout(function () {
+      showScreen("s9FirstPassword");
+    }, 850);
+  });
+
+  /* PASSWORD ONE: شيكس */
+
+  $("s9PasswordOneButton").addEventListener("click", checkFirstPassword);
+
+  $("s9PasswordOne").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") checkFirstPassword();
+  });
+
+  function checkFirstPassword() {
+    const input = normalizeArabic($("s9PasswordOne").value);
+    const accepted = normalizeArabic("شيكس");
+
+    if (input === accepted) {
+      $("s9PasswordOneError").textContent = "";
+      showFeedback(true);
+
+      setTimeout(startDateGame, 500);
+    } else {
+      $("s9PasswordOneError").textContent =
+        "مش دي يا روحي... فكّر في الكلمة اللي بتناديك بيها.";
+      showFeedback(false);
+    }
+  }
+
+  /* DATE PUZZLES */
+
+  const datePuzzles = [
+    {
+      display: "14.10.2024",
+      digits: ["4", "2", "0", "1", "4", "2", "1", "0"],
+      lengths: [2, 2, 4]
+    },
+    {
+      display: "5.11.2024",
+      digits: ["2", "0", "5", "4", "1", "2", "1"],
+      lengths: [1, 2, 4]
+    },
+    {
+      display: "28.2.2025",
+      digits: ["5", "2", "0", "8", "2", "2", "2"],
+      lengths: [2, 1, 4],
+      time: "12:21 AM"
+    }
+  ];
+
+  function startDateGame() {
+    clearInterval(dateTimer);
+
+    dateIndex = 0;
+    datesSolved = 0;
+    secondsLeft = 60;
+    dateLocked = false;
+
+    $("s9DateScoreLabel").textContent = "SOLVED: 0";
+
+    showScreen("s9DateGame");
+    loadDatePuzzle();
+  }
+
+  function loadDatePuzzle() {
+    clearInterval(dateTimer);
+
+    if (dateIndex >= datePuzzles.length) {
+      startQuiz();
+      return;
+    }
+
+    dateLocked = false;
+    selectedDigits = [];
+    secondsLeft = 60;
+
+    const puzzle = datePuzzles[dateIndex];
+
+    $("s9DateRoundLabel").textContent =
+      "CODE 0" + (dateIndex + 1) + " / 03";
+
+    $("s9DateScoreLabel").textContent = "SOLVED: " + datesSolved;
+    $("s9DateError").textContent = "";
+    $("s9DateStatus").textContent = "";
+    $("s9TimerNumber").textContent = "60";
+    $("s9TimerLine").style.strokeDashoffset = "0";
+    $("s9TimerLine").style.stroke = "#a9bfe9";
+    $("s9TimerNumber").style.color = "#f2f5ff";
+    $("s9DateSubmit").disabled = false;
+
+    $("s9FixedTime").classList.toggle("show", dateIndex === 2);
+    $("s9DateDisplay").textContent = formatDateDigits("", puzzle.lengths);
+
+    const scrambledBox = $("s9ScrambledNumbers");
+    scrambledBox.replaceChildren();
+
+    puzzle.digits.forEach(function (digit, index) {
+      const button = document.createElement("button");
+
+      button.type = "button";
+      button.className = "s9-digit";
+      button.textContent = digit;
+      button.dataset.digit = digit;
+      button.dataset.index = index;
+      button.setAttribute("aria-label", "اختيار الرقم " + digit);
+
+      button.addEventListener("click", function () {
+        selectDateDigit(button);
+      });
+
+      scrambledBox.appendChild(button);
+    });
+
+    dateTimer = setInterval(function () {
+      secondsLeft--;
+      updateDateTimer();
+
+      if (secondsLeft <= 0) {
+        clearInterval(dateTimer);
+        dateTimeout();
+      }
+    }, 1000);
+  }
+
+  function formatDateDigits(digits, lengths) {
+    let result = "";
+    let position = 0;
+
+    lengths.forEach(function (length, index) {
+      if (index > 0) result += ".";
+
+      const chunk = digits.slice(position, position + length);
+      result += chunk.length ? chunk.join("") : "_".repeat(length);
+
+      position += length;
+    });
+
+    return result;
+  }
+
+  function selectDateDigit(button) {
+    if (dateLocked || button.disabled) return;
+
+    const puzzle = datePuzzles[dateIndex];
+
+    selectedDigits.push({
+      digit: button.dataset.digit,
+      index: Number(button.dataset.index)
+    });
+
+    button.disabled = true;
+
+    const entered = selectedDigits.map(item => item.digit);
+
+    $("s9DateDisplay").textContent =
+      formatDateDigits(entered, puzzle.lengths);
+
+    $("s9DateError").textContent = "";
+
+    if (selectedDigits.length === puzzle.digits.length) {
+      $("s9DateStatus").textContent = "خلصت ترتيب الأرقام؟ اضغط فك الشفرة ❤️";
+    }
+  }
+
+  function undoLastDigit() {
+    if (dateLocked || selectedDigits.length === 0) return;
+
+    const removed = selectedDigits.pop();
+    const button = section.querySelector(
+      '.s9-digit[data-index="' + removed.index + '"]'
+    );
+
+    if (button) button.disabled = false;
+
+    const puzzle = datePuzzles[dateIndex];
+    const entered = selectedDigits.map(item => item.digit);
+
+    $("s9DateDisplay").textContent =
+      formatDateDigits(entered, puzzle.lengths);
+
+    $("s9DateError").textContent = "";
+    $("s9DateStatus").textContent = "";
+  }
+
+  function resetDigits() {
+    if (dateLocked) return;
+
+    selectedDigits = [];
+
+    section.querySelectorAll(".s9-digit").forEach(button => {
+      button.disabled = false;
+    });
+
+    const puzzle = datePuzzles[dateIndex];
+
+    $("s9DateDisplay").textContent =
+      formatDateDigits("", puzzle.lengths);
+
+    $("s9DateError").textContent = "";
+    $("s9DateStatus").textContent = "";
+  }
+
+  $("s9UndoDigit").addEventListener("click", undoLastDigit);
+  $("s9ResetDigits").addEventListener("click", resetDigits);
+  $("s9DateSubmit").addEventListener("click", checkDatePuzzle);
+
+  function updateDateTimer() {
+    $("s9TimerNumber").textContent = secondsLeft;
+
+    const circumference = 2 * Math.PI * 43;
+    const elapsed = (60 - secondsLeft) / 60;
+
+    $("s9TimerLine").style.strokeDasharray = circumference;
+    $("s9TimerLine").style.strokeDashoffset = circumference * elapsed;
+
+    if (secondsLeft <= 10) {
+      $("s9TimerLine").style.stroke = "#e94c65";
+      $("s9TimerNumber").style.color = "#ff8190";
+    } else {
+      $("s9TimerLine").style.stroke = "#a9bfe9";
+      $("s9TimerNumber").style.color = "#f2f5ff";
+    }
+  }
+
+  function checkDatePuzzle() {
+    if (dateLocked) return;
+
+    const puzzle = datePuzzles[dateIndex];
+
+    if (selectedDigits.length !== puzzle.digits.length) {
+      $("s9DateError").textContent =
+        "لسه فيه أرقام متبقية... اختار كل الأرقام بالترتيب الأول.";
+      showFeedback(false);
+      return;
+    }
+
+    const enteredDate = selectedDigits.map(item => item.digit).join("");
+    const correctDate = puzzle.display.replace(/\D/g, "");
+
+    if (enteredDate === correctDate) {
+      clearInterval(dateTimer);
+      dateLocked = true;
+      datesSolved++;
+
+      $("s9DateScoreLabel").textContent = "SOLVED: " + datesSolved;
+      $("s9DateStatus").textContent = "صح يا روحي... كل رقم وراه حكاية ❤️";
+      $("s9DateError").textContent = "";
+      $("s9DateSubmit").disabled = true;
+
+      showFeedback(true);
+
+      setTimeout(function () {
+        dateIndex++;
+        loadDatePuzzle();
+      }, 1000);
+    } else {
+      $("s9DateError").textContent =
+        "الترتيب مش صح... جرّب تاني يا روحي.";
+      showFeedback(false);
+    }
+  }
+
+  function dateTimeout() {
+    if (dateLocked) return;
+
+    dateLocked = true;
+    $("s9DateSubmit").disabled = true;
+    $("s9DateError").textContent = "الوقت خلص... الشفرة دي ضاعت منك.";
+    $("s9DateStatus").textContent = "";
+
+    showFeedback(false);
+
+    setTimeout(function () {
+      dateIndex++;
+      loadDatePuzzle();
+    }, 1300);
+  }
+
+  /* MEMORY QUESTIONS */
+
+  const quizQuestions = [
+    {
+      date: "14.10.2024",
+      question: "التاريخ ده بيفكرك بإيه يا روحي؟",
+      accepts: [
+        ["اول شات"],
+        ["اول مره", "واتس"],
+        ["اول مره", "نبعت"],
+        ["اول مره", "اتكلمنا", "واتس"],
+        ["بدا بينا كلام", "واتس"]
+      ]
+    },
+    {
+      date: "5.11.2024",
+      question: "5.11.2024 قولي بتاع إيه يا روحي؟",
+      accepts: [
+        ["بدانا كلام"],
+       ["بدايه كلامنا"],
+
+      ]
+    },
+    {
+      date: "28.2.2025",
+      question: "28.2.2025 الساعة 12:21 AM بيفكرك بإيه؟",
+      accepts: [
+        ["اول بحبك"],
+        ["اول مره", "بحبك"],
+        ["اول مرة", "بحبك"],
+        ["اعترفتلك بحبي"],
+        ["اعترفتلك", "بحبي"],
+        ["قلتلك", "بحبك"],
+        ["قولتلك", "بحبك"]
+      ]
+    }
+  ];
+
+  function startQuiz() {
+    clearTimeout(quizRetryTimer);
+
+    quizIndex = 0;
+    quizCorrect = 0;
+    quizLocked = false;
+
+    $("s9QuestionScore").textContent = "CORRECT: 0";
+
+    showScreen("s9Questions");
+    loadQuizQuestion();
+  }
+
+  function loadQuizQuestion() {
+    if (quizIndex >= quizQuestions.length) {
+      finishQuiz();
+      return;
+    }
+
+    quizLocked = false;
+
+    const question = quizQuestions[quizIndex];
+
+    $("s9QuestionNumber").textContent =
+      "QUESTION 0" + (quizIndex + 1) + " / 03";
+
+    $("s9QuestionScore").textContent = "CORRECT: " + quizCorrect;
+    $("s9QuizQuestion").textContent = question.question;
+    $("s9QuizDate").textContent = question.date;
+    $("s9QuizError").textContent = "";
+    $("s9QuizStatus").textContent = "";
+    $("s9QuizTextInput").value = "";
+    $("s9QuizTextInput").disabled = false;
+    $("s9QuizTextSubmit").disabled = false;
+  }
+
+  $("s9QuizTextSubmit").addEventListener("click", checkQuizAnswer);
+
+  $("s9QuizTextInput").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") checkQuizAnswer();
+  });
+
+  function containsAcceptedAnswer(input, acceptedGroups) {
+    const answer = normalizeArabic(input);
+
+    return acceptedGroups.some(function (group) {
+      return group.every(function (phrase) {
+        return answer.includes(normalizeArabic(phrase));
+      });
+    });
+  }
+
+  function checkQuizAnswer() {
+    if (quizLocked) return;
+
+    const question = quizQuestions[quizIndex];
+    const input = $("s9QuizTextInput").value.trim();
+
+    if (!input) {
+      $("s9QuizError").textContent = "اكتبلي إجابتك يا روحي ❤️";
+      showFeedback(false);
+      return;
+    }
+
+    quizLocked = true;
+
+    $("s9QuizTextInput").disabled = true;
+    $("s9QuizTextSubmit").disabled = true;
+
+    const correct = containsAcceptedAnswer(input, question.accepts);
+
+    if (correct) {
+      quizCorrect++;
+      $("s9QuizStatus").textContent = "فاكر الحكاية صح يا روحي... ♡";
+      $("s9QuizError").textContent = "";
+      showFeedback(true);
+    } else {
+      $("s9QuizError").textContent =
+        "مش دي الإجابة اللي مستنياها منك... فكّر تاني ❤️";
+      $("s9QuizStatus").textContent = "";
+      showFeedback(false);
+    }
+
+    $("s9QuestionScore").textContent = "CORRECT: " + quizCorrect;
+
+    setTimeout(function () {
+      quizIndex++;
+      loadQuizQuestion();
+    }, 1500);
+  }
+
+  function finishQuiz() {
+    clearTimeout(quizRetryTimer);
+
+    if (quizCorrect >= 2) {
+      $("s9PasswordTwoError").textContent = "";
+      $("s9PasswordTwo").value = "";
+      showScreen("s9FinalPassword");
+      return;
+    }
+
+    showScreen("s9Questions");
+    $("s9QuizError").textContent =
+      "محتاج تفتكر تفاصيل أكتر يا روحي... هنجرّب الأسئلة تاني من الأول.";
+
+    quizRetryTimer = setTimeout(startQuiz, 2200);
+  }
+
+  /* FINAL PASSWORD */
+
+  $("s9PasswordTwoButton").addEventListener("click", checkFinalPassword);
+
+  $("s9PasswordTwo").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") checkFinalPassword();
+  });
+
+  function checkFinalPassword() {
+    const input = normalizeArabic($("s9PasswordTwo").value);
+    const accepted = normalizeArabic("قدر احمد صلاح");
+
+    if (input === accepted) {
+      $("s9PasswordTwoError").textContent = "";
+      showFeedback(true);
+
+      setTimeout(function () {
+        showScreen("s9Success");
+      }, 650);
+    } else {
+      $("s9PasswordTwoError").textContent =
+        "قريب... فكّر في الاسم اللي مكتوب في حكايتنا.";
+      showFeedback(false);
+    }
+  }
+
+  /* FINAL ENVELOPE */
+
+  $("s9RevealEnvelope").addEventListener("click", function () {
+    showScreen("s9FinalEnvelope");
+  });
+
+  $("s9SecondFlyingEnvelope").addEventListener("click", function () {
+    this.classList.add("opened");
+    showFeedback(true);
+
+    setTimeout(function () {
+      showScreen("s9Letter");
+    }, 900);
+  });
+
+  /* GO TO SECTION 10 */
+
+  $("s9Finish").addEventListener("click", function () {
+    const nextSection = document.getElementById("s10");
+
+    if (nextSection) {
+      nextSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    } else {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
+
+})();
+</script>
+
+
+<p>♡⋆｡˚ ☾ ˚｡⋆ ♡⋆｡˚ ☾♡⋆｡˚ ☾ ˚｡⋆ ♡⋆｡˚ ☾ ˚｡⋆ ♡⋆｡˚ ☾ ˚｡⋆ ♡ ───── ⋆｡˚ ☾ ˚｡⋆ ─── 𝐼 𝐿𝑜𝓋𝑒 𝒴𝑜𝓊 𝒜𝒽𝓂𝑜𝓊𝒹y ♡⋆｡˚ ☾ ˚｡⋆  ♡ ♡⋆｡˚ ☾ ˚⋆｡˚ ☾⋆｡˚ ☾ ˚｡⋆ ⋆｡˚ ☾ ˚｡⋆ ── ♡ ♡⋆｡˚ ☾ ˚｡⋆  ♡⋆｡˚ ☾ ˚｡⋆ </p>
+
+
+
+<!-- 10: OUR FUTURE -->
+
+<section id="s10">
+  <div class="section-inner">
+    <div class="number">10 — OUR FUTURE</div>
+    <h2>يوم ما نبقى في بيت واحد… لما يبقى حلمنا حقيقة… تفاصيل عمر نفسي نعيشها سوا</h2>
+    <div class="divider"></div>
+
+    <div class="future-intro-card">
+      <p class="description">
+        بيت واحد وتفاصيل يومية صغيرة وعمر كامل نعيشه جنب بعض. 🏡❤️
+      </p>
+      <button class="future-start-button" id="futureStartButton" type="button">
+        <span>✦</span> ابدأ حكايتنا
+      </button>
+    </div>
+
+    <div class="future-story" id="futureStory">
+      <div class="future-once-upon" id="futureOnceUpon">يحكى أن…</div>
+
+      <div class="future-book-wrap" id="futureBookWrap" hidden>
+        <div class="future-book" id="futureBook">
+          <div class="future-book-spread">
+            <div class="future-book-image-side">
+              <img class="future-book-image" id="futurePageImage"
+                   src="photo.jpg/K1.jpg" alt="K1">
+
+              <div class="future-pair-grid" id="futurePairGrid" hidden>
+                <figure class="future-pair-card">
+                  <img id="futurePairImageOne" src="" alt="">
+                  <figcaption class="future-empty-caption"></figcaption>
+                </figure>
+                <figure class="future-pair-card">
+                  <img id="futurePairImageTwo" src="" alt="">
+                  <figcaption class="future-empty-caption"></figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <article class="future-book-text" id="futureRightPage" dir="rtl">
+              <div id="futureStandardText">
+                <span class="future-page-number" id="futurePageNumber">01 — OUR NEXT CHAPTER </span>
+                <h3 class="future-page-title" id="futurePageTitle"></h3>
+                <p class="future-page-copy" id="futurePageCopy"></p>
+              </div>
+
+              <div id="futureSpecialRight" hidden>
+                <img class="future-full-page-image" id="futureSpecialFullImage"
+                     src="" alt="K111">
+                <div class="future-special-caption"></div>
+              </div>
+            </article>
+          </div>
+          <div class="future-book-controls">
+            <span class="future-page-count" id="futurePageCount">1 / 26</span>
+          </div>
+          <button class="future-page-button" id="futurePrevPage" type="button" aria-label="الصفحة السابقة">›</button>
+          <button class="future-page-button" id="futureNextPage" type="button" aria-label="الصفحة التالية">‹</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- المهمة السرية -->
+
+
+<footer>
+  <div class="heart">♡</div>
+  <h2>ولنا في الحكاية بقية</h2>
+  <p>ONLY WE KNOW — إنت وأنا وبس ❤️</p>
+</footer>
+
+<script>
+/* المهمة السرية */
+
+const lines = [
+  "طب كفاية كلام عن الحب بقى… تعالى أقولك إيه اللي ورّطك فيا من الأول 😏❤️‍🔥",
+  "نخش بقى على أسباب فقدان السيطرة 😌💋",
+  "نيجي للحِتّة اللي قلبتلك كيانك",
+  "طب تعالى نفتكر إنت وقعت فيا ليه أصلًا 👀❤️",
+  "والآن… ننتقل إلى موضع الخطر 😌💋",
+  "الملامح اللي وقّعتك على بوزك 😂❤️‍🔥"
+];
+
+let lineIndex = 0;
+let count = 0;
+
+function openEnvelope() {
+  document.getElementById("envelope").classList.add("hidden");
+  document.getElementById("mission").classList.remove("hidden");
+}
+
+function nextLine() {
+  lineIndex++;
+
+  if (lineIndex < lines.length) {
+    document.getElementById("missionText").textContent = lines[lineIndex];
+  }
+
+  if (lineIndex === lines.length - 1) {
+    document.getElementById("nextMessage").textContent = "كمّل المهمة";
+  }
+
+  if (lineIndex >= lines.length) {
+    document.getElementById("mission").classList.add("hidden");
+    document.getElementById("countdown").classList.remove("hidden");
+  }
+}
+
+function startCountdown() {
+  document.getElementById("countdown").classList.add("hidden");
+  document.getElementById("countStage").classList.remove("hidden");
+}
+
+function countStep(step) {
+  if (step !== count + 1) return;
+
+  count = step;
+
+  document.getElementById("c" + step).classList.add("active");
+
+  const messages = {
+    1: "واحد... بدأنا يا بطل 👀",
+    2: "اتنين... خلاص قربنا 😂",
+    3: "تلاتة... استعد للمفاجأة! ❤️‍🔥"
+  };
+
+  document.getElementById("countMessage").textContent = messages[step];
+
+  if (step < 3) {
+    document.getElementById("c" + (step + 1)).disabled = false;
+  } else {
+    document.getElementById("goButton").classList.remove("hidden");
+  }
+}
+
+function showFinalMessage() {
+  document.getElementById("countStage").classList.add("hidden");
+  document.getElementById("finalMessage").classList.remove("hidden");
+}
+
+function revealFile() {
+  document.getElementById("finalMessage").classList.add("hidden");
+
+  const photoFile = document.getElementById("photoFile");
+  photoFile.classList.remove("hidden");
+
+  photoFile.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+/* فتح ظرف اللوجو */
+
+function openLogoEnvelope() {
+  const envelope = document.getElementById("logoEnvelope");
+
+  if (!envelope) return;
+
+  envelope.classList.toggle("opened");
+
+  const hint = envelope.querySelector(".envelope-hint");
+  const note = envelope.querySelector(".opened-note");
+
+  if (envelope.classList.contains("opened")) {
+    if (note) {
+      note.textContent = "سرنا الصغير اللي محدش يعرفه غيرنا ♡";
+    }
+  } else {
+    if (hint) {
+      hint.textContent = "💌 افتح الظرف واكتشف الحكاية اللي جواه";
+    }
+  }
+}
+
+/* تكبير صور الذكريات */
+
+const memoryLightbox = document.getElementById("memoryLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+const lightboxClose = document.getElementById("lightboxClose");
+
+let previousFocus = null;
+
+document.querySelectorAll(".memory-photo").forEach(function(button) {
+  button.addEventListener("click", function() {
+    const imagePath = button.dataset.image;
+    const caption = button.dataset.caption || "";
+
+    previousFocus = button;
+
+    lightboxImage.src = imagePath;
+    lightboxImage.alt = caption;
+    lightboxCaption.textContent = caption;
+
+    memoryLightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+    lightboxClose.focus();
+  });
+});
+
+function closeMemoryLightbox() {
+  memoryLightbox.classList.remove("active");
+  lightboxImage.src = "";
+  document.body.style.overflow = "";
+
+  if (previousFocus) {
+    previousFocus.focus();
+  }
+}
+
+lightboxClose.addEventListener("click", closeMemoryLightbox);
+
+memoryLightbox.addEventListener("click", function(event) {
+  if (event.target === memoryLightbox) {
+    closeMemoryLightbox();
+  }
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape" && memoryLightbox.classList.contains("active")) {
+    closeMemoryLightbox();
+  }
+});
+</script>
+
+
+<script>
+/* ظرف الذكريات: الباسورد هو بطوط */
+function showSeaPassword() {
+  const entry = document.getElementById("seaEntry");
+  const gate = document.getElementById("seaPasswordGate");
+  if (!entry || !gate) return;
+  entry.hidden = true;
+  gate.hidden = false;
+  const input = document.getElementById("seaPasswordInput");
+  if (input) input.focus();
+}
+
+function unlockSeaMemories() {
+  const input = document.getElementById("seaPasswordInput");
+  const error = document.getElementById("seaPasswordError");
+  const gate = document.getElementById("seaPasswordGate");
+  const memories = document.getElementById("seaMemoryWorld");
+  if (!input || !error || !gate || !memories) return;
+
+  if (input.value.trim() === "بطوط") {
+    error.textContent = "";
+    gate.hidden = true;
+    memories.hidden = false;
+  } else {
+    error.textContent = "مش ده الاسم اللي بدلعك بيه ❤️";
+    input.focus();
+    input.select();
+  }
+}
+
+/* تكبير صور عالم البحر */
+(function initSeaPhotoViewer() {
+  const field = document.getElementById("seaPhotoField");
+  const viewer = document.getElementById("seaPhotoViewer");
+  const expanded = document.getElementById("seaExpandedPhoto");
+  const close = document.getElementById("seaPhotoClose");
+  if (!field || !viewer || !expanded || !close) return;
+
+  function closePhoto() {
+    viewer.hidden = true;
+    expanded.src = "";
+    document.body.style.overflow = "";
+  }
+
+  field.addEventListener("click", (event) => {
+    const card = event.target.closest(".sea-photo-card");
+    if (!card) return;
+    expanded.src = card.dataset.photo;
+    viewer.hidden = false;
+    document.body.style.overflow = "hidden";
+  });
+  close.addEventListener("click", closePhoto);
+  viewer.addEventListener("click", (event) => {
+    if (event.target === viewer) closePhoto();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !viewer.hidden) closePhoto();
+  });
+})();
+
+/* تشغيل فيديوهات عالم البحر */
+(function initSeaVideos() {
+  const field = document.getElementById("seaVideoField");
+  const modal = document.getElementById("seaVideoModal");
+  const video = document.getElementById("seaExpandedVideo");
+  const close = document.getElementById("seaVideoClose");
+  if (!field || !modal || !video || !close) return;
+
+  function closeVideo() {
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  field.addEventListener("click", (event) => {
+    const card = event.target.closest(".sea-video-card");
+    if (!card) return;
+    const source = card.dataset.video;
+    if (!source) return;
+    video.pause();
+    video.src = source;
+    video.load();
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    const attempt = video.play();
+    if (attempt && attempt.catch) attempt.catch(() => {});
+  });
+  close.addEventListener("click", closeVideo);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) closeVideo();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) closeVideo();
+  });
+})();
+
+/* كتاب حكاية عمرنا الجاي */
+const futurePages = [
+  { image: "photo.jpg/K1.jpg", caption: "نبدأ بأستاذ أحمد شخصيًا، واقف في الكلية ساند على التويوتا، ولابس الهودي الأسود، وماسك التليفون طبعًا... لأن واضح إن الراجل عنده اجتماعات أهم من المحاضرات 😂\n\nكان داخل الكلية ولا داخل يصوّر إعلان عربيات؟ مش عارفين لحد دلوقتي، بس الواثق ده كان محتاج حد يفكره إنه لسه طالب زينا. ❤️" },
+  { image: "photo.jpg/K2.jpg", caption: "وعلى الناحية التانية بقى، في نفس الكلية، كانت فيه واحدة داخلة السكشن بكل ثقة، لابسة الدريس ونضارة النظر، وشكلها بنت ناس ورايحة تذاكر وتبني مستقبلها 😂\n\nمكانتش تعرف إن في نفس المكان ده فيه واحد بالهودي الأسود والتويوتا، هيبقى ليه حكاية معاها بعدين... ❤️" },
+  { image: "photo.jpg/K3.jpg", caption: "وبعدين بدأنا نمشي سوا... أنا مشغولة جدًا في الاسكيتش وبحاول أركز في اللي بكتبه، والأستاذ أحمد سايب الدنيا كلها وباصص لعيوني 😂\n\nيعني يا أحمد ما تبص قدامك يا حبيبي، الطريق مش هيحفظ نفسه! بس عمومًا واضح إن الاسكيتش مكنش أهم حاجة في اللحظة دي. ❤️" },
+  { image: "photo.jpg/K4.jpg", caption: "وبعد كل الرغي والهزار واللف في الجامعة، كان لازم ناخد بريك صغير من دوشة العالم. قاعدين سوا، مفيش حاجة مهمة بتحصل، ولا كلام كتير محتاج يتقال... بس يمكن دي كانت من ألطف الحاجات، إننا نكون في نفس المكان وخلاص. ❤️" },
+  { image: "photo.jpg/K5.jpg", caption: "وهنا بقى جه الاعتراف الرسمي 😂❤️\nيوم 28/2/2025 الساعة 12:21 بالليل، الأستاذ أحمد قرر يبعتلي «بحبك يا بطوط»... وهو في نص الصورة بيضحك بكل ثقة، وأنا في النص التاني مكسوفة ومش عارفة أعمل فيها إيه.\n\nمش عارفة إيه اللي كان مكسوف أكتر، أنا ولا وشي اللي فضحني 😂\nبس الرسالة دي ليها مكان كبير ولطيف أوي في قلبي. ❤️" },
+  { image: "photo.jpg/K6.jpg", caption: "وفيه بقى نظرات كده مكنتش محتاجة ترجمة... عينه كانت بتلمع وهو باصصلي، وأنا مش عارفة هو شايف إيه فيا بالظبط، بس واضح إنه كان شايف حاجة تستاهل البصة دي كلها 😂❤️\n\nيا أحمد خف علينا شوية، إحنا بنحاول نتصرف طبيعي هنا!" },
+  { image: "photo.jpg/K7.jpg", caption: "وهنا بقى كل واحد فينا كان مركز في حاجة 😂❤️ أنا باصة على إيدينا، وهو مشغول بيا أنا... يعني حتى وإحنا ماسكين إيد بعض، مفيش فايدة، الراجل عينه مش بتروح من عليا!\n\nبس بعيدًا عن النكش، كان فيه إحساس حلو أوي في تفاصيل صغيرة زي دي، إيد في إيد، والدنيا كلها عادي إلا اللحظة دي. ❤️ وعمري ما أنسى أول مرة لمست فيها إيدي بجد." },
+  { image: "photo.jpg/K8.jpg", caption: "وهنا بقى الحكاية خدت لفة كبيرة، من واحد واقف عند التويوتا في الكلية، وواحدة داخلة السكشن بنضارتها، لحد ما بقينا واقفين قدام الناس بنقول إننا اختارنا بعض. 😂❤️\n\nمين كان يصدق إن كل الهزار والنظرات والرخامة دي هتوصلنا لليوم ده؟!" },
+  { image: "photo.jpg/K9.jpg", caption: "وبدأنا ندخل في الجد بقى 😂 اختيارات ألوان الشقة، وكل واحد فينا عنده ذوق ورأي ومش مستعد يتنازل بسهولة... يعني لسه متجوزناش وبدأنا اجتماعات مجلس الإدارة!\n\nبس كان حلو إننا بنختار تفاصيل مكان هيبقى بتاعنا، حتى لو اختلفنا على لون الحيطة كل خمس دقايق. 😂❤️" },
+  { image: "photo.jpg/K10.jpg", caption: "وبدأنا نحط العفش بقى، وكل حاجة بتاخد مكانها، وإحنا طبعًا مش ساكتين 😂😂 ضحك وهزار وتعليقات على كل قطعة، ومحدش عارف إحنا بنفرش الشقة ولا بنصور برنامج كوميدي!\n\nبس أحلى حاجة إننا كنا بنحط حاجات في مكان هيجمعنا، والضحكة كانت موجودة في كل تفصيلة. ❤️" },
+  { image: "photo.jpg/K11.jpg", caption: "يااااه، هو إحنا بجد وصلنا لليوم ده؟! 🥹❤️\n\nفاكرين كل اللي فات؟ الكلية، والسكاشن، والمشاوير، والضحك، والخناقات على أتفه الأسباب، وكل التفاصيل الصغيرة اللي مكنّاش نعرف إنها بتبني حكاية كبيرة بالشكل ده؟\n\nيمكن مكنّاش متخيلين إن كل ده هيحصلنا، بس أهو وصلنا لليوم اللي كنا بنحلم بيه... ياااه على الحكايات لما تكبر بينا. ❤️" },
+  {
+    special: true,
+    fullImage: "photo.jpg/K111.jpeg",
+    images: ["photo.jpg/K222.jpeg", "photo.jpg/k333.jpeg"],
+    caption: "يمكن لسه صورة من خيالنا، بس يا رب ييجي يوم تبقى ذكرى حقيقية... ونلبسها فرحة مش مجرد أمنية. ❤️"
+  },
+  { image: "photo.jpg/K12.jpg", caption: "وبعد كل اللف والاختيارات والفرش والخناق على لون الحيطة 😂 وصلنا للحظة دي... واقفين في شقتنا، حاضنين بعض، وسط كل حاجة اختارناها سوا.\n\nيمكن دي كانت أكتر لحظة محتاجة كلام أقل وحضن أطول، كأننا بنقول لبعض: أهو تعبنا واختياراتنا وأحلامنا بقت مكان بيجمعنا.\n\nبس يا أحمد متفتكرش إن الحضن ده هيعفيك من مسؤولية ترتيب الشقة، أنا لسه عندي كلام كتير 😂❤️" },
+  { images: ["photo.jpg/K13.jpeg", "photo.jpg/K14.jpeg"], caption: "وشوية صور كده من أيامنا، ملهاش ترتيب ولا مناسبة معينة... ضحكة هنا، خروجة هناك، صورة عفوية، ومواقف محدش هيفهم حكايتها غيرنا.\n\nأصل إحنا مش محتاجين مناسبة عشان نعمل ذكرى، إحنا كنا بنعرف نطلع من أبسط يوم حكاية نفضل نفتكرها ونضحك عليها. ❤️" },
+  { image: "photo.jpg/K15.jpg", caption: "وسط هدوء الليل، مفيش كلام كتير ولا حاجة محتاجة تتقال... بس حضن دافي يخلّي الدنيا كلها تهدى، ونحس إننا في مكاننا الصح. ❤️\n\nأتمنى نقدر نوصل للحظة دي يومًا ما." },
+  { image: "photo.jpg/K16.jpg", caption: "وفي أوضتنا بقى، كل حاجة هادية، وأحمد كالعادة مشغول ببصته ليا، كأنه بيطمنّي إن كل حاجة تمام. ❤️\n\nتفاصيل بسيطة، بس يمكن هي دي بالظبط الحاجات اللي بنحلم نعيشها كل يوم." },
+  { image: "photo.jpg/K17.jpg", caption: "«كل ما أفتكر إني ههرب من بوساتك، تلاقيني محاصرة في حضنك تاني 😂❤️»" },
+  { image: "photo.jpg/K18.jpg", caption: "«يمكن لسه دي مجرد لحظة بنحلم بيها، بس نفسي ييجي يوم تبقى فيه تفاصيلنا العادية دي حقيقة.. شاي بالنعناع، وبلكونة تجمعنا، وإنت مطمن ونايم على رجلي.. وأنا بلعب في شعرك ومش عايزة اللحظة تخلص. ❤️»" },
+  { images: ["photo.jpg/K19.jpg", "photo.jpg/K20.jpg"], caption: "«حركتنا المفضلة اللي مهما اتكررت مش بنزهق منها.. بوسة على مناخيري، وأنا أضحك وأبصلك، وإنت عامل نفسك مش عارف إنك بتخليني أطير من الفرحة. 😂❤️»" },
+  { image: "photo.jpg/K21.jpg", caption: "«مفيش هزار المرة دي، ولا دوشة.. إحنا قاعدين جنب بعض على السرير، وكل واحد فينا مرتاح بوجود التاني. يمكن دي أبسط صورة للحياة اللي نفسنا فيها.. إننا نلاقي الهدوء في بعض. ❤️»" },
+  { image: "photo.jpg/K22.jpeg", caption: "«متخيلين شكل حياتنا بعدين؟ إنت حاطط إيدك على بطني وبتبصلي، وأنا بفكر إزاي ممكن لحلم صغير كنا بنحكي عنه يبقى يومًا ما جزء من حياتنا بجد. 🥹❤️»" },
+  { image: "photo.jpg/K23.jpeg", caption: "«يمكن دي أكتر لحظة بنتمناها وبنخاف منها في نفس الوقت.. إيدك في إيدي، وداخلين المستشفى نقابل أجمل حاجة استنيناها سوا. 🥹❤️»" },
+  { image: "photo.jpg/K24.jpeg", caption: "«مش مصدقة إن الحلم اللي كنا بنحكي عنه بقى بين إيديا بجد.. أنا بعيط من الفرحة، وإنت بتضحك وبتبص علينا.. يا رب ييجي اليوم اللي نعيش فيه اللحظة دي ونبقى أسعد اتنين في الدنيا. 🥹❤️»" },
+  { image: "photo.jpg/K25.jpeg", caption: "«بقى عندنا شقاوة صغيرة مالية البيت ضحك ودوشة 😂❤️ وإنت بتلعب معاه وأنا بتفرج عليكم ومش مصدقة إن ده بقى بيتنا وحياتنا.. يا رب الحلم ده يكبر معانا.»" },
+  { image: "photo.jpg/K26.jpg", caption: "«أنا بالاسدال وشايلة واحد، وإنت مشغول بالتاني، والبيت كله ضحك وشقاوة 😂❤️ مين كان يصدق إن كل الأحلام والخيالات اللي بنحكيها سوا تبقى يوم من الأيام تفاصيل يومنا؟ يا رب يجمعنا على الحلم ده.»" },
+  { image: "photo.jpg/K27.jpeg", caption: "يمكن كل التفاصيل دي لسه مجرد خيال بنرسمه سوا، وكل صورة من دول مجرد لحظة بنتمنى تيجي في يوم من الأيام..\n\nبنتخيل بيتنا، وضحكتنا، وخناقاتنا الصغيرة، وشاي النعناع في البلكونة، وأطفالنا اللي يملوا البيت دوشة وشقاوة، وبنتخيل نفسنا بعد سنين لسه بنبص لبعض بنفس الحب.\n\nمش عارفين المستقبل مخبيلنا إيه، ولا هنعيش كل التفاصيل دي إزاي، بس كل اللي بنتمناه إننا نكون مرتاحين، مبسوطين، وبيتنا مليان مودة ورحمة ورضا.\n\nيا رب لو لينا نصيب في الحلم ده، تجمعنا على خير، وتكتب لنا أيام حلوة، وترزقنا الذرية الصالحة، وتبارك لنا في عمرنا ورزقنا وحياتنا، وتجعل بيتنا دايمًا مليان ضحك وونس وطمأنينة.\n\nويا أحمد، يمكن دي مجرد حدوته بنحكيها دلوقتي، بس أنا أتمنى في يوم نرجع نفتكرها وإحنا عايشين كل اللي كنا بنخيله، ونضحك ونقول: فاكر لما كنا بنحلم بكل ده؟\n\nلحد ما اليوم ده ييجي.. خلّي الحلم حلو، وسيب الباقي على ربنا.\n\nONLY WE KNOW ❤️🌊" },
+];
+
+(function initFutureBook() {
+  const story = document.getElementById("futureStory");
+  const start = document.getElementById("futureStartButton");
+  const bookWrap = document.getElementById("futureBookWrap");
+  const image = document.getElementById("futurePageImage");
+  const pairGrid = document.getElementById("futurePairGrid");
+  const pairImageOne = document.getElementById("futurePairImageOne");
+  const pairImageTwo = document.getElementById("futurePairImageTwo");
+  const rightPage = document.getElementById("futureRightPage");
+  const standardText = document.getElementById("futureStandardText");
+  const specialRight = document.getElementById("futureSpecialRight");
+  const specialFullImage = document.getElementById("futureSpecialFullImage");
+  const specialCaption = document.querySelector("#s10 .future-special-caption");
+  const pageTitle = document.getElementById("futurePageTitle");
+  const pageCopy = document.getElementById("futurePageCopy");
+  const number = document.getElementById("futurePageNumber");
+  const count = document.getElementById("futurePageCount");
+  const previous = document.getElementById("futurePrevPage");
+  const next = document.getElementById("futureNextPage");
+
+  if (!story || !start || !bookWrap || !image || !pairGrid || !pairImageOne ||
+      !pairImageTwo || !rightPage || !standardText || !specialRight ||
+      !specialFullImage || !specialCaption || !pageTitle || !pageCopy ||
+      !number || !count || !previous || !next) return;
+
+  let pageIndex = 0;
+
+  function renderPage() {
+    const page = futurePages[pageIndex];
+    const isSpecial = Boolean(page.special);
+    const isPair = Array.isArray(page.images);
+
+    image.hidden = isPair;
+    pairGrid.hidden = !isPair;
+    standardText.hidden = isSpecial;
+    specialRight.hidden = !isSpecial;
+    rightPage.classList.toggle("future-special-right", isSpecial);
+
+    if (isPair) {
+      pairImageOne.src = page.images[0];
+      pairImageOne.alt = page.images[0].split("/").pop();
+      pairImageTwo.src = page.images[1];
+      pairImageTwo.alt = page.images[1].split("/").pop();
+    } else if (!isSpecial) {
+      image.src = page.image;
+      image.alt = page.image.split("/").pop();
+    }
+
+    if (isSpecial) {
+      specialFullImage.src = page.fullImage;
+      specialFullImage.alt = page.fullImage.split("/").pop();
+      specialCaption.textContent = page.caption || "";
+    } else {
+      specialCaption.textContent = "";
+    }
+
+    pageTitle.textContent = "";
+    pageTitle.hidden = true;
+    pageCopy.textContent = page.caption || "";
+    number.textContent = String(pageIndex + 1).padStart(2, "0") + " — OUR NEXT CHAPTER";
+    count.textContent = (pageIndex + 1) + " / " + futurePages.length;
+    previous.disabled = pageIndex === 0;
+    next.disabled = pageIndex === futurePages.length - 1;
+  }
+
+  start.addEventListener("click", () => {
+    if (story.classList.contains("started")) return;
+    story.classList.add("started");
+    start.disabled = true;
+
+    window.setTimeout(() => {
+      bookWrap.hidden = false;
+      story.classList.add("book-visible");
+      renderPage();
+    }, 1700);
+  });
+
+  previous.addEventListener("click", () => {
+    if (pageIndex <= 0) return;
+    pageIndex -= 1;
+    renderPage();
+  });
+
+  next.addEventListener("click", () => {
+    if (pageIndex >= futurePages.length - 1) return;
+    pageIndex += 1;
+    renderPage();
+  });
+
+  renderPage();
+})();
+</script>
+
+
+</body>
+</html>
